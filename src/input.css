@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Màu thương hiệu SkillUp English */
+  --color-brand-50: #f1f0fa;
+  --color-brand-600: #6a67ce;
+  --color-brand-700: #5552b8;
+
+  /* Màu bổ trợ */
+  --color-accent-500: #1aafd0;
+  --color-success-500: #3be8b0;
+  --color-action-500: #fc636b;
+  --color-warning-500: #ffb900;
+
+  /* Màu giao diện */
+  --color-ink: #111928;
+  --color-muted: #6b7280;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f9fafb;
+  --color-line: #e5e7eb;
+
+  /* Phông chữ */
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Bo góc */
+  --radius-card: 0.5rem;
+}
