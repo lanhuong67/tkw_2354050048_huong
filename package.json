@@ -1,0 +1,22 @@
+{
+  "name": "tkw_2354050048_huong",
+  "version": "1.0.0",
+  "description": "Trang web giới thiệu phần mềm học Tiếng Anh trực tuyến .",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanhuong67/tkw_2354050048_huong.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lanhuong67/tkw_2354050048_huong/issues"
+  },
+  "homepage": "https://github.com/lanhuong67/tkw_2354050048_huong#readme"
+}
