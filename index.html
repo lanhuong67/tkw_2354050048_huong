@@ -1,59 +1,250 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>SkillUp English - Học tiếng Anh trực tuyến</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap"
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="./dist/output.css">
+    <link
+        rel="stylesheet"
+        href="./dist/output.css"
+    >
 </head>
-<body>
+<body class="bg-surface font-body text-ink">
 
     <!-- Skip link -->
-    <a href="#main">Bỏ qua đến nội dung chính</a>
+    <a
+        href="#main"
+        class="sr-only focus:not-sr-only focus:absolute
+               focus:z-50 focus:bg-white focus:p-4"
+    >
+        Bỏ qua đến nội dung chính
+    </a>
 
     <!-- 1. Navbar -->
-    <header>
-        <nav aria-label="Điều hướng chính">
-            <a href="/">SkillUp English</a>
+    <header class="bg-surface">
+        <nav
+            class="mx-auto flex w-full max-w-6xl items-center
+                   justify-between gap-8 px-5 py-6"
+            aria-label="Điều hướng chính"
+        >
 
-            <ul>
-                <li><a href="#features">Tính năng</a></li>
-                <li><a href="#stats">Thành tựu</a></li>
-                <li><a href="#testimonials">Đánh giá</a></li>
-                <li><a href="#pricing">Học phí</a></li>
-                <li><a href="#faq">Câu hỏi</a></li>
+            <a
+                href="#main"
+                class="font-display text-2xl font-bold text-brand-600"
+            >
+                SkillUp English
+            </a>
+
+            <ul class="hidden flex-1 items-center gap-8 lg:flex">
+                <li>
+                    <a class="font-medium text-ink hover:text-brand-600"
+                       href="#features">
+                        Tính năng
+                    </a>
+                </li>
+
+                <li>
+                    <a class="font-medium text-ink hover:text-brand-600"
+                       href="#stats">
+                        Thành tựu
+                    </a>
+                </li>
+
+                <li>
+                    <a class="font-medium text-ink hover:text-brand-600"
+                       href="#testimonials">
+                        Đánh giá
+                    </a>
+                </li>
+
+                <li>
+                    <a class="font-medium text-ink hover:text-brand-600"
+                       href="#pricing">
+                        Học phí
+                    </a>
+                </li>
+
+                <li>
+                    <a class="font-medium text-ink hover:text-brand-600"
+                       href="#faq">
+                        Câu hỏi
+                    </a>
+                </li>
             </ul>
 
-            <a href="#pricing">Bắt đầu học</a>
+            <div class="flex items-center gap-4">
+                <a
+                    href="#features"
+                    class="hidden text-sm font-medium text-ink sm:block"
+                >
+                    Khám phá
+                </a>
+
+                <a href="#pricing" class="btn btn-primary">
+                    Bắt đầu học
+                </a>
+            </div>
+
         </nav>
     </header>
 
     <main id="main">
-
         <!-- 2. Hero -->
-        <section aria-labelledby="hero-title">
-            <h1 id="hero-title">
-                Học tiếng Anh dễ dàng, tự tin giao tiếp mỗi ngày
-            </h1>
+        <section
+            class="section grid items-center gap-14
+                lg:grid-cols-2 lg:gap-16"
+            aria-labelledby="hero-title"
+        >
+            <!-- Nội dung trái -->
+            <div class="flex flex-col items-start gap-10">
 
-            <p>
-                SkillUp English giúp bạn phát triển kỹ năng nghe, nói,
-                đọc và viết thông qua lộ trình học phù hợp với trình độ.
-            </p>
+                <div class="space-y-6">
+                    <h1
+                        id="hero-title"
+                        class="font-display text-4xl font-black
+                            leading-tight text-ink
+                            sm:text-5xl
+                            lg:text-6xl lg:leading-none"
+                    >
+                        Học tiếng Anh dễ dàng,
+                        tự tin giao tiếp mỗi ngày
+                </h1>
 
-            <a href="#features">Khám phá lộ trình</a>
-            <a href="#pricing">Bắt đầu học miễn phí</a>
-        </section>
+                <p
+                    class="max-w-2xl text-lg leading-7
+                       text-muted lg:text-xl lg:leading-8"
+                >
+                    SkillUp English giúp bạn phát triển kỹ năng
+                    nghe, nói, đọc và viết thông qua lộ trình học
+                    phù hợp với trình độ.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+                <a
+                    href="#pricing"
+                    class="btn btn-primary"
+                >
+                    Bắt đầu học miễn phí
+                </a>
+
+                <a
+                    href="#features"
+                    class="btn btn-secondary"
+                >
+                    Khám phá lộ trình
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Nội dung phải -->
+        <div
+            class="rounded-card bg-brand-50 p-5
+               sm:p-8"
+            aria-label="Minh họa lộ trình học SkillUp English"
+        >
+            <div
+                class="rounded-card bg-surface p-6
+                   shadow-lg"
+            >
+                <p
+                    class="text-sm font-semibold
+                       text-brand-600"
+                >
+                    Lộ trình hôm nay
+                </p>
+
+                <p
+                    class="mt-2 font-display text-2xl
+                       font-bold text-ink"
+                >
+                    English for Communication
+                </p>
+
+                <p class="mt-2 text-muted">
+                    Hoàn thành từng kỹ năng để cải thiện
+                    khả năng giao tiếp.
+                </p>
+
+                <ul class="mt-6 space-y-4">
+
+                    <li
+                        class="flex items-center justify-between
+                           rounded-card bg-accent-50 p-4"
+                    >
+                        <span class="font-medium text-ink">
+                            Listening
+                        </span>
+
+                        <span class="text-accent-500">
+                            Nghe
+                        </span>
+                    </li>
+
+                    <li
+                        class="flex items-center justify-between
+                           rounded-card bg-success-50 p-4"
+                    >
+                        <span class="font-medium text-ink">
+                            Speaking
+                        </span>
+
+                        <span class="text-success-500">
+                            Nói
+                        </span>
+                    </li>
+
+                    <li
+                        class="flex items-center justify-between
+                           rounded-card bg-action-50 p-4"
+                    >
+                        <span class="font-medium text-ink">
+                            Reading
+                        </span>
+
+                        <span class="text-action-500">
+                            Đọc
+                        </span>
+                        </li>
+
+                    <li
+                        class="flex items-center justify-between
+                           rounded-card bg-warning-50 p-4"
+                    >
+                        <span class="font-medium text-ink">
+                            Writing
+                        </span>
+
+                        <span class="text-warning-500">
+                            Viết
+                        </span>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
 
 
         <!-- 3. Đối tác -->

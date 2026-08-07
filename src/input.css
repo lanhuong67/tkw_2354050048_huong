@@ -27,4 +27,34 @@
 
   /* Bo góc */
   --radius-card: 0.5rem;
+
+  --radius-pill: 9999px;
+
+  --color-accent-50: #eaf9fc;
+  --color-success-50: #eafbf5;
+  --color-action-50: #fff0f1;
+  --color-warning-50: #fff8e0;
+  
+  
+
+}
+
+/* Container dùng chung */
+.section {
+    @apply mx-auto w-full max-w-6xl px-5 py-20 lg:py-28;
+}
+
+/* Button component */
+.btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill
+           px-5 py-2.5 text-sm font-semibold transition-colors;
+}
+
+.btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700;
+}
+
+.btn-secondary {
+    @apply border border-line bg-surface text-ink
+           hover:bg-surface-soft;
 }
