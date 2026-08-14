@@ -153,13 +153,17 @@
   @apply flex flex-col gap-4;
 }
 
-.footer-group,
-.footer-links {
-  @apply flex flex-col gap-4;
+.footer-group {
+    @apply flex flex-col gap-4;
 }
 
 .footer-links {
-  @apply gap-3 text-muted;
+    @apply flex flex-col gap-4 text-muted;
+}
+
+
+.footer-links a {
+  @apply hover:text-brand-600;
 }
 
 .footer-links a {
