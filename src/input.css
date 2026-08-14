@@ -165,3 +165,20 @@
 .footer-links a {
   @apply hover:text-brand-600;
 }
+
+.price-card {
+    @apply flex h-full flex-col gap-6 p-8;
+}
+
+.price {
+    @apply font-display text-4xl font-extrabold;
+}
+
+.feature-list {
+    @apply flex flex-col gap-3 text-left text-muted;
+}
+
+.badge {
+    @apply whitespace-nowrap rounded-pill
+           px-3 py-1 text-xs font-semibold;
+}
