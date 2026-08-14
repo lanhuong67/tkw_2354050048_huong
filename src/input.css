@@ -41,13 +41,14 @@
 
 /* Container dùng chung */
 .section {
-    @apply mx-auto w-full max-w-6xl px-5 py-20 lg:py-28;
+    @apply mx-auto w-full max-w-6xl px-5 py-20 lg:py-24;
 }
 
 /* Button component */
 .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-pill
-           px-5 py-2.5 text-sm font-semibold transition-colors;
+    @apply inline-flex h-12 items-center justify-center gap-2
+           rounded-lg px-5 py-3 text-sm font-semibold
+           transition-colors;
 }
 
 .btn-primary {
