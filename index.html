@@ -35,8 +35,19 @@
                 <li><a class="font-medium hover:text-brand-600" href="#faq">Câu hỏi</a></li>
             </ul>
             <div class="flex items-center gap-4">
-                <a href="#features" class="hidden text-sm font-medium hover:text-brand-600 sm:block">Khám phá</a>
-                <a href="#pricing" class="btn btn-primary btn-sm">Bắt đầu học</a>
+                <a href="#features" class="hidden text-sm font-medium hover:text-brand-600 lg:block">
+                    Khám phá
+                </a>
+
+                <a href="#pricing" class="btn btn-primary btn-sm hidden sm:inline-flex">
+                    Bắt đầu học
+                </a>
+
+                <button type="button"
+                    class="grid h-10 w-10 place-items-center rounded-lg border border-line bg-surface text-2xl text-ink lg:hidden"
+                    aria-label="Mở menu">
+                    <span aria-hidden="true">☰</span>
+                </button>
             </div>
         </nav>
     </header>
@@ -59,11 +70,12 @@
                     <a href="#features" class="btn btn-secondary">Khám phá lộ trình</a>
                 </div>
             </div>
-            <div class="flex h-[416px] w-full items-center justify-end lg:w-[448px]"
+            <div class="flex w-full items-center justify-center lg:h-[416px] lg:w-[448px] lg:justify-end"
                 aria-label="Minh họa học tiếng Anh trực tuyến">
-                <img class="h-[416px] w-full max-w-[532px] object-contain lg:w-[532px] lg:max-w-none"
+                <img class="h-auto w-full max-w-[532px] object-contain lg:h-[416px] lg:w-[532px] lg:max-w-none"
                     src="./assets/img/skillup-hero.svg"
                     alt="Lớp học tiếng Anh trực tuyến với giáo viên, sách, tai nghe và micro" width="532" height="416">
+                </img>
             </div>
         </section>
 
