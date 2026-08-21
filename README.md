@@ -33,3 +33,53 @@ Dark mode được kiểm tra bằng cách thêm tạm class `dark` vào thẻ `
 
 ```html
 <html lang="vi" class="dark">
+```
+
+Buổi 3 chưa sử dụng JavaScript để bật/tắt dark mode. Chức năng này sẽ được thực hiện ở Buổi 4.
+
+## Form accessible
+
+Form liên hệ có:
+
+- `label for` liên kết với `input id`
+- `autocomplete`
+- `pattern` cho số điện thoại
+- `aria-describedby`
+- `role="alert"` cho vùng lỗi
+- Focus rõ ràng
+- Không dùng placeholder thay cho label
+
+## Responsive
+
+Các breakpoint đã kiểm tra:
+
+- 360px
+- 768px
+- 1024px
+- 1440px
+
+Bảng so sánh sử dụng `overflow-x-auto` và `min-w-[720px]` để giữ khả năng đọc trên mobile.
+
+## Figma
+
+[Landwind - Tailwind CSS Landing Page](https://www.figma.com/design/h9lWb63nat97pWwZpzQ3DU/Landwind---Tailwind-CSS-Landing-Page--Community---Copy-?node-id=1-16010)
+
+## GitHub Pages
+
+URL dự kiến:
+
+https://lanhuong67.github.io/tkw_2354050048_huong/
+
+URL này sẽ được kiểm tra lại sau khi bật GitHub Pages.
+
+## Pull Request
+
+- [Pull Request Buổi 2](https://github.com/lanhuong67/tkw_2354050048_huong/pull/1)
+
+## So sánh Figma và website
+
+Ảnh so sánh Figma và website sẽ được bổ sung sau khi hoàn thành bản rebrand trên Figma.
+
+## Sẽ làm lại nếu có thêm thời gian
+
+Dự án sử dụng HTML tĩnh nên Navbar và Footer phải được chép lại ở cả ba trang. Nếu phát triển bằng framework hoặc template engine, các phần này nên được tách thành component dùng chung để tránh lặp code.
