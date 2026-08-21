@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Liên hệ SkillUp English để được tư vấn lộ trình và lựa chọn gói học tiếng Anh trực tuyến.">
+    <title>Liên hệ - SkillUp English</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+
+<body class="bg-surface font-body text-ink">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4">Bỏ qua đến nội
+        dung chính</a>
+
+    <!-- 1. Navbar -->
+    <header class="bg-surface">
+        <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-5 py-6 xl:px-0"
+            aria-label="Điều hướng chính">
+            <a href="./index.html" class="flex shrink-0 items-center gap-3 font-display text-2xl font-bold text-ink">
+                <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-sm font-extrabold text-white"
+                    aria-hidden="true">S</span>
+                <span>SkillUp English</span>
+            </a>
+            <ul class="hidden flex-1 items-center gap-8 lg:flex">
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#features">Tính năng</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#stats">Thành tựu</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#testimonials">Đánh giá</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./pricing.html">Học phí</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#faq">Câu hỏi</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+                <a href="./index.html#features" class="hidden text-sm font-medium hover:text-brand-600 lg:block">
+                    Khám phá
+                </a>
+
+                <a href="./pricing.html" class="btn btn-primary btn-sm hidden sm:inline-flex">
+                    Bắt đầu học
+                </a>
+
+                <button type="button"
+                    class="grid h-10 w-10 place-items-center rounded-lg border border-line bg-surface text-2xl text-ink lg:hidden"
+                    aria-label="Mở menu">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <!-- 1. Giới thiệu trang liên hệ -->
+        <section class="bg-surface py-16 lg:py-24" aria-labelledby="contact-title">
+            <div class="mx-auto w-full max-w-7xl px-5 xl:px-0">
+                <div class="section-heading">
+                    <p class="font-semibold text-brand-600">
+                        Liên hệ với SkillUp English
+                    </p>
+
+                    <h1 id="contact-title" class="title-section">
+                        Chúng tôi luôn sẵn sàng hỗ trợ bạn
+                    </h1>
+
+                    <p class="text-lg text-muted">
+                        Chia sẻ nhu cầu học tiếng Anh để nhận tư vấn về
+                        lộ trình, học phí và gói học phù hợp.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid items-start gap-8 lg:mt-16 lg:grid-cols-3">
+                    <!-- 2. Form liên hệ -->
+                    <form action="#" method="get" class="card flex flex-col gap-6 lg:col-span-2" aria-labelledby="form-title">
+                        <div class="flex flex-col gap-2">
+                            <h2 id="form-title" class="font-display text-2xl font-bold">
+                                Gửi yêu cầu tư vấn
+                            </h2>
+
+                            <p class="text-muted">
+                                Các trường có dấu
+                                <span class="text-action-500" aria-hidden="true">
+                                    *
+                                </span>
+                                là thông tin bắt buộc.
+                            </p>
+                        </div>
+
+                        <!-- Họ và tên -->
+                        <div>
+                            <label class="field-label" for="ho-ten">
+                                Họ và tên
+
+                                <span class="text-action-500" aria-hidden="true">
+                                    *
+                                </span>
+                            </label>
+
+                            <input class="field-input" id="ho-ten" name="hoTen" type="text" autocomplete="name"
+                                aria-describedby="ho-ten-error" required>
+
+                            <p class="field-error" id="ho-ten-error" role="alert"></p>
+                        </div>
+
+                        <!-- Số điện thoại -->
+                        <div>
+                            <label class="field-label" for="dien-thoai">
+                                Số điện thoại
+
+                                <span class="text-action-500" aria-hidden="true">
+                                    *
+                                </span>
+                            </label>
+
+                            <input class="field-input" id="dien-thoai" name="dienThoai" type="tel" autocomplete="tel"
+                                inputmode="numeric" pattern="0[0-9]{9}"
+                                aria-describedby="dien-thoai-hint dien-thoai-error" required>
+
+                            <p class="mt-1.5 text-xs text-muted" id="dien-thoai-hint">
+                                Nhập số điện thoại gồm 10 chữ số, bắt đầu bằng 0.
+                            </p>
+
+                            <p class="field-error" id="dien-thoai-error" role="alert"></p>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label class="field-label" for="email">
+                                Email
+
+                                <span class="text-action-500" aria-hidden="true">
+                                    *
+                                </span>
+                            </label>
+
+                            <input class="field-input" id="email" name="email" type="email" autocomplete="email"
+                                aria-describedby="email-error" required>
+
+                            <p class="field-error" id="email-error" role="alert"></p>
+                        </div>
+
+                        <!-- Trình độ tiếng Anh -->
+                        <div>
+                            <label class="field-label" for="trinh-do">
+                                Trình độ tiếng Anh
+
+                                <span class="text-action-500" aria-hidden="true">
+                                    *
+                                </span>
+                            </label>
+
+                            <select class="field-input" id="trinh-do" name="trinhDo" aria-describedby="trinh-do-error"
+                                required>
+                                <option value="">
+                                    Chọn trình độ hiện tại
+                                </option>
+
+                                <option value="moi-bat-dau">
+                                    Mới bắt đầu
+                                </option>
+
+                                <option value="co-ban">
+                                    Cơ bản
+                                </option>
+
+                                <option value="trung-cap">
+                                    Trung cấp
+                                </option>
+
+                                <option value="nang-cao">
+                                    Nâng cao
+                                </option>
+
+                                <option value="chua-ro">
+                                    Chưa xác định
+                                </option>
+                            </select>
+
+                            <p class="field-error" id="trinh-do-error" role="alert"></p>
+                        </div>
+
+                        <!-- Mục tiêu học tập -->
+                        <div>
+                            <label class="field-label" for="muc-tieu">
+                                Mục tiêu học tập
+
+                                <span class="text-action-500" aria-hidden="true">
+                                    *
+                                </span>
+                            </label>
+
+                            <select class="field-input" id="muc-tieu" name="mucTieu" aria-describedby="muc-tieu-error"
+                                required>
+                                <option value="">
+                                    Chọn mục tiêu học tập
+                                </option>
+
+                                <option value="giao-tiep">
+                                    Giao tiếp hằng ngày
+                                </option>
+
+                                <option value="hoc-tap">
+                                    Phục vụ học tập
+                                </option>
+
+                                <option value="cong-viec">
+                                    Phục vụ công việc
+                                </option>
+
+                                <option value="phat-am">
+                                    Cải thiện phát âm
+                                </option>
+
+                                <option value="tong-quat">
+                                    Phát triển toàn diện
+                                </option>
+                            </select>
+
+                            <p class="field-error" id="muc-tieu-error" role="alert"></p>
+                        </div>
+
+                        <!-- Nội dung cần tư vấn -->
+                        <div>
+                            <label class="field-label" for="noi-dung">
+                                Nội dung cần tư vấn
+
+                                <span class="text-action-500" aria-hidden="true">
+                                    *
+                                </span>
+                            </label>
+
+                            <textarea class="field-input min-h-32" id="noi-dung" name="noiDung" rows="5"
+                                aria-describedby="noi-dung-hint noi-dung-error" required></textarea>
+
+                            <p class="mt-1.5 text-xs text-muted" id="noi-dung-hint">
+                                Bạn có thể chia sẻ thời gian học, mục tiêu hoặc
+                                gói học đang quan tâm.
+                            </p>
+
+                            <p class="field-error" id="noi-dung-error" role="alert"></p>
+                        </div>
+
+                        <!-- Đồng ý liên hệ -->
+                        <div>
+                            <div class="flex items-start gap-3">
+                                <input class="mt-1 h-4 w-4 accent-brand-600" id="dong-y" name="dongY" type="checkbox"
+                                    aria-describedby="dong-y-error" required>
+
+                                <label class="text-sm leading-6 text-ink" for="dong-y">
+                                    Tôi đồng ý để SkillUp English liên hệ tư vấn
+                                    dựa trên thông tin đã cung cấp.
+
+                                    <span class="text-action-500" aria-hidden="true">
+                                        *
+                                    </span>
+                                </label>
+                            </div>
+
+                            <p class="field-error" id="dong-y-error" role="alert"></p>
+                        </div>
+
+                        <button class="btn btn-primary w-full sm:w-auto" type="submit">
+                            Gửi yêu cầu tư vấn
+                        </button>
+                    </form>
+
+                    <!-- 3. Thông tin liên hệ -->
+                    <aside class="flex flex-col gap-6" aria-labelledby="contact-info-title">
+                        <section class="card flex flex-col gap-5">
+                            <h2 id="contact-info-title" class="font-display text-2xl font-bold">
+                                Thông tin liên hệ
+                            </h2>
+
+                            <div class="flex flex-col gap-4">
+                                <div>
+                                    <h3 class="font-semibold">
+                                        Email hỗ trợ
+                                    </h3>
+
+                                    <a class="text-muted hover:text-brand-600" href="mailto:support@skillup.example">
+                                        support@skillup.example
+                                    </a>
+                                </div>
+
+                                <div>
+                                    <h3 class="font-semibold">
+                                        Điện thoại
+                                    </h3>
+
+                                    <a class="text-muted hover:text-brand-600" href="tel:02812345678">
+                                        028 1234 5678
+                                    </a>
+                                </div>
+
+                                <div>
+                                    <h3 class="font-semibold">
+                                        Thời gian hỗ trợ
+                                    </h3>
+
+                                    <p class="text-muted">
+                                        Thứ Hai đến thứ Sáu, 8:00–17:00.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3 class="font-semibold">
+                                        Địa điểm
+                                    </h3>
+
+                                    <p class="text-muted">
+                                        TP. Hồ Chí Minh, Việt Nam.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 4. Quy trình sau khi gửi -->
+                        <section class="card flex flex-col gap-5" aria-labelledby="next-steps-title">
+                            <h2 id="next-steps-title" class="font-display text-2xl font-bold">
+                                Sau khi gửi thì sao?
+                            </h2>
+
+                            <ol class="flex flex-col gap-4 text-muted">
+                                <li>
+                                    <span class="font-semibold text-brand-600">
+                                        1.
+                                    </span>
+
+                                    Chúng tôi tiếp nhận thông tin và tìm hiểu
+                                    nhu cầu học tập của bạn.
+                                </li>
+
+                                <li>
+                                    <span class="font-semibold text-brand-600">
+                                        2.
+                                    </span>
+
+                                    Đội ngũ tư vấn liên hệ qua email hoặc số
+                                    điện thoại đã cung cấp.
+                                </li>
+
+                                <li>
+                                    <span class="font-semibold text-brand-600">
+                                        3.
+                                    </span>
+
+                                    Bạn nhận gợi ý về lộ trình và gói học phù hợp
+                                    với mục tiêu của mình.
+                                </li>
+                            </ol>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 10. Footer -->
+    <footer class="bg-surface">
+        <div class="mx-auto flex w-full max-w-7xl flex-col
+               gap-16 px-5 py-16 xl:px-0">
+            <!-- Các nhóm liên kết phía trên -->
+            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                <nav class="footer-group" aria-labelledby="footer-product">
+                    <h2 id="footer-product" class="text-sm font-semibold uppercase text-ink">
+                        Sản phẩm
+                    </h2>
+
+                    <ul class="footer-links">
+                        <li><a href="./index.html#features">Tính năng</a></li>
+                        <li><a href="./index.html#pricing">Gói học</a></li>
+                        <li><a href="./index.html#stats">Thành tựu</a></li>
+                        <li><a href="./index.html#testimonials">Đánh giá</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-group" aria-labelledby="footer-learning">
+                    <h2 id="footer-learning" class="text-sm font-semibold uppercase text-ink">
+                        Học tập
+                    </h2>
+
+                    <ul class="footer-links">
+                        <li><a href="./index.html#features">Lộ trình cá nhân</a></li>
+                        <li><a href="./index.html#features">Luyện phát âm</a></li>
+                        <li><a href="./index.html#features">Theo dõi tiến độ</a></li>
+                        <li><a href="./index.html#features">Kiểm tra trình độ</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-group" aria-labelledby="footer-support">
+                    <h2 id="footer-support" class="text-sm font-semibold uppercase text-ink">
+                        Hỗ trợ
+                    </h2>
+
+                    <ul class="footer-links">
+                        <li><a href="./index.html#faq">Câu hỏi thường gặp</a></li>
+                        <li>
+                            <a href="mailto:support@skillup.example">
+                                Liên hệ
+                            </a>
+                        </li>
+                        <li><a href="#main">Hướng dẫn sử dụng</a></li>
+                        <li><a href="#main">Trung tâm trợ giúp</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-group" aria-labelledby="footer-legal">
+                    <h2 id="footer-legal" class="text-sm font-semibold uppercase text-ink">
+                        Thông tin
+                    </h2>
+
+                    <ul class="footer-links">
+                        <li><a href="#main">Giới thiệu</a></li>
+                        <li><a href="#main">Chính sách bảo mật</a></li>
+                        <li><a href="#main">Điều khoản sử dụng</a></li>
+                        <li><a href="#main">TP. Hồ Chí Minh, Việt Nam</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Thương hiệu và mạng xã hội phía dưới -->
+            <div class="flex flex-col items-center gap-5 text-center">
+                <a href="#main" class="flex items-center gap-3
+                       font-display text-2xl font-bold text-ink">
+                    <span class="grid h-8 w-8 place-items-center
+                           rounded-lg bg-brand-600
+                           text-sm font-extrabold text-white" aria-hidden="true">
+                        S
+                    </span>
+
+                    <span>SkillUp English</span>
+                </a>
+
+                <p class="text-sm text-muted">
+                    © 2026 SkillUp English. All rights reserved.
+                </p>
+
+                <div class="flex items-center gap-5" aria-label="Mạng xã hội">
+                    <a href="#" aria-label="GitHub" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/github.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+
+                    <a href="#" aria-label="Twitter" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/twitter.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+
+                    <a href="#" aria-label="Dribbble" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/dribbble.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+
+                    <a href="#" aria-label="Facebook" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/facebook-f.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

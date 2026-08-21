@@ -181,4 +181,21 @@
   .price {
     @apply font-display text-4xl font-extrabold;
   }
+
+    /* Nhãn của trường nhập */
+  .field-label {
+    @apply mb-2 block text-sm font-semibold text-ink;
+  }
+
+  /* Ô nhập, danh sách chọn và vùng nhập nội dung */
+  .field-input {
+    @apply w-full rounded-lg border border-line bg-surface px-4 py-3
+           text-ink outline-none transition-colors
+           focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20;
+  }
+
+  /* Dòng thông báo lỗi */
+  .field-error {
+    @apply mt-1.5 text-sm text-action-500;
+  }
 }
