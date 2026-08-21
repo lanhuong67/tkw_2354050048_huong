@@ -21,6 +21,13 @@
   --color-surface-soft: #f9fafb;
   --color-line: #e5e7eb;
 
+  /* Màu giao diện dark mode */
+  --color-ink-invert: #edeef8;
+  --color-muted-invert: #aeb3c7;
+  --color-line-invert: #343653;
+  --color-surface-dark: #151625;
+  --color-surface-dark-alt: #1d1f33;
+
   /* Phông chữ */
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -34,6 +41,16 @@
   --color-success-50: #eafbf5;
   --color-action-50: #fff0f1;
   --color-warning-50: #fff8e0;
+
+  
+}
+
+.dark {
+  --color-ink: var(--color-ink-invert);
+  --color-muted: var(--color-muted-invert);
+  --color-line: var(--color-line-invert);
+  --color-surface: var(--color-surface-dark);
+  --color-surface-soft: var(--color-surface-dark-alt);
 }
 
 @layer components {
