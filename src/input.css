@@ -54,10 +54,6 @@
 }
 
 @layer components {
-  .section {
-    @apply mx-auto w-full max-w-6xl px-5 py-20 lg:py-24;
-  }
-
   /* Button component */
   .btn {
     @apply inline-flex h-12 items-center justify-center gap-2
@@ -74,11 +70,6 @@
            hover:bg-surface-soft;
   }
 
-  /* Nút nhỏ dùng riêng cho navbar */
-  .btn-sm {
-    @apply h-10 px-3 py-2 text-sm;
-  }
-
   /* Tiêu đề section */
   .section-heading {
     @apply mx-auto flex max-w-3xl flex-col gap-4 text-center;
@@ -93,79 +84,6 @@
     @apply rounded-card border border-line bg-surface p-6 shadow-sm;
   }
 
-  /* Thẻ tính năng */
-  .feature-card {
-    @apply flex flex-col gap-4;
-  }
-
-  .icon-box {
-    @apply grid h-11 w-11 place-items-center
-         rounded-lg bg-brand-50 text-brand-600;
-  }
-
-  .title-card {
-    @apply font-display text-xl font-bold text-ink;
-  }
-
-  .text-card {
-    @apply leading-7 text-muted;
-  }
-
-  /* Dải logo theo kích thước và nhịp của Figma */
-  .partner-logo {
-    @apply flex shrink-0 items-center justify-center gap-2
-         whitespace-nowrap text-lg font-bold text-muted;
-  }
-
-  .partner-mark {
-    @apply grid h-9 w-9 shrink-0 place-items-center rounded-lg
-         bg-surface-soft text-sm font-extrabold text-muted;
-  }
-
-  /* Hai hàng tính năng theo bố cục Landwind */
-  .check-item {
-    @apply flex items-center gap-2;
-  }
-
-  .check-item span {
-    @apply grid h-5 w-5 shrink-0 place-items-center rounded-pill
-         bg-brand-600 text-xs font-bold text-white;
-  }
-
-  .feature-visual {
-    @apply w-full rounded-card border border-line bg-surface p-6 shadow-sm;
-  }
-
-  .mock-card {
-    @apply flex flex-col gap-3 rounded-card border border-line
-         bg-surface p-5 shadow-sm;
-  }
-
-  /* Thành phần dùng ở các section tiếp theo */
-  .stat {
-    @apply flex flex-col text-center;
-  }
-
-  .stat dd {
-    @apply font-display text-4xl font-extrabold text-brand-600;
-  }
-
-  .price-card {
-    @apply flex h-full flex-col gap-6 p-8;
-  }
-
-  .feature-list {
-    @apply flex flex-col gap-3 text-left text-muted;
-  }
-
-  .badge {
-    @apply whitespace-nowrap rounded-pill px-3 py-1 text-xs font-semibold;
-  }
-
-  .faq-card {
-    @apply flex flex-col gap-4;
-  }
-
   .footer-group {
     @apply flex flex-col gap-4;
   }
@@ -178,10 +96,6 @@
     @apply hover:text-brand-600;
   }
 
-  .price {
-    @apply font-display text-4xl font-extrabold;
-  }
-
     /* Nhãn của trường nhập */
   .field-label {
     @apply mb-2 block text-sm font-semibold text-ink;
@@ -192,10 +106,5 @@
     @apply w-full rounded-lg border border-line bg-surface px-4 py-3
            text-ink outline-none transition-colors
            focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20;
-  }
-
-  /* Dòng thông báo lỗi */
-  .field-error {
-    @apply mt-1.5 text-sm text-action-500;
   }
 }
