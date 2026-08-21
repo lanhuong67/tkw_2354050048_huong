@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Khám phá các gói học tiếng Anh trực tuyến và so sánh tính năng của SkillUp English.">
+    <title>Học phí - SkillUp English</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+
+<body class="bg-surface font-body text-ink">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4">Bỏ qua đến nội
+        dung chính</a>
+
+    <!-- 1. Navbar -->
+    <header class="bg-surface">
+        <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-5 py-6 xl:px-0"
+            aria-label="Điều hướng chính">
+            <a href="./index.html" class="flex shrink-0 items-center gap-3 font-display text-2xl font-bold text-ink">
+                <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-sm font-extrabold text-white"
+                    aria-hidden="true">S</span>
+                <span>SkillUp English</span>
+            </a>
+            <ul class="hidden flex-1 items-center gap-8 lg:flex">
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#features">Tính năng</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#stats">Thành tựu</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#testimonials">Đánh giá</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./pricing.html">Học phí</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#faq">Câu hỏi</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+                <a href="./index.html#features" class="hidden text-sm font-medium hover:text-brand-600 lg:block">
+                    Khám phá
+                </a>
+
+                <a href="./pricing.html" class="btn btn-primary btn-sm hidden sm:inline-flex">
+                    Bắt đầu học
+                </a>
+
+                <button type="button"
+                    class="grid h-10 w-10 place-items-center rounded-lg border border-line bg-surface text-2xl text-ink lg:hidden"
+                    aria-label="Mở menu">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <!-- 1. Bảng giá -->
+        <section class="bg-surface py-16 lg:py-24" aria-labelledby="pricing-title">
+            <div class="mx-auto flex w-full max-w-7xl flex-col gap-12 px-5 lg:gap-16 xl:px-0">
+                <div class="section-heading">
+                    <p class="font-semibold text-brand-600">
+                        Học phí linh hoạt
+                    </p>
+
+                    <h1 id="pricing-title" class="title-section">
+                        Chọn gói học phù hợp với bạn
+                    </h1>
+
+                    <p class="text-lg text-muted">
+                        Bắt đầu miễn phí và nâng cấp khi bạn cần thêm bài học,
+                        luyện phát âm và lộ trình cá nhân hóa.
+                    </p>
+                </div>
+
+                <ul class="grid items-stretch gap-6 lg:grid-cols-3">
+                    <!-- Gói Cơ bản -->
+                    <li class="card price-card">
+                        <div class="flex flex-col gap-2">
+                            <h2 class="font-display text-2xl font-bold">
+                                Cơ bản
+                            </h2>
+
+                            <p class="text-muted">
+                                Dành cho người mới bắt đầu.
+                            </p>
+                        </div>
+
+                        <p class="flex items-baseline justify-center gap-2">
+                            <span class="price">0đ</span>
+
+                            <span class="text-muted">
+                                / tháng
+                            </span>
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>✓ Bài học tiếng Anh nền tảng</li>
+                            <li>✓ Theo dõi tiến độ học tập</li>
+                            <li>✓ 5 phút luyện tập mỗi ngày</li>
+                            <li>✓ Sử dụng trên điện thoại</li>
+                        </ul>
+
+                        <a href="./contact.html" class="btn btn-secondary mt-auto w-full">
+                            Chọn gói Cơ bản
+                        </a>
+                    </li>
+
+                    <!-- Gói Tiêu chuẩn -->
+                    <li class="card price-card relative ring-2 ring-brand-600">
+                        <span class="badge absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-600 text-white">
+                            Được chọn nhiều nhất
+                        </span>
+
+                        <div class="flex flex-col gap-2">
+                            <h2 class="font-display text-2xl font-bold">
+                                Tiêu chuẩn
+                            </h2>
+
+                            <p class="text-muted">
+                                Học đầy đủ bốn kỹ năng.
+                            </p>
+                        </div>
+
+                        <p class="flex items-baseline justify-center gap-2">
+                            <span class="price">149.000đ</span>
+
+                            <span class="text-muted">
+                                / tháng
+                            </span>
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>✓ Toàn bộ bài học cơ bản</li>
+                            <li>✓ Luyện nghe, nói, đọc và viết</li>
+                            <li>✓ Luyện phát âm hằng ngày</li>
+                            <li>✓ Lộ trình cá nhân hóa</li>
+                            <li>✓ Báo cáo tiến độ hằng tuần</li>
+                        </ul>
+
+                        <a href="./contact.html" class="btn btn-primary mt-auto w-full">
+                            Chọn gói Tiêu chuẩn
+                        </a>
+                    </li>
+
+                    <!-- Gói Toàn diện -->
+                    <li class="card price-card">
+                        <div class="flex flex-col gap-2">
+                            <h2 class="font-display text-2xl font-bold">
+                                Toàn diện
+                            </h2>
+
+                            <p class="text-muted">
+                                Lộ trình chuyên sâu theo mục tiêu.
+                            </p>
+                        </div>
+
+                        <p class="flex items-baseline justify-center gap-2">
+                            <span class="price">249.000đ</span>
+
+                            <span class="text-muted">
+                                / tháng
+                            </span>
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>✓ Toàn bộ quyền lợi gói Tiêu chuẩn</li>
+                            <li>✓ Bài luyện chuyên sâu</li>
+                            <li>✓ Phản hồi bài nói và bài viết</li>
+                            <li>✓ Lộ trình giao tiếp thực tế</li>
+                            <li>✓ Hỗ trợ học tập ưu tiên</li>
+                        </ul>
+
+                        <a href="./contact.html" class="btn btn-secondary mt-auto w-full">
+                            Chọn gói Toàn diện
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2. So sánh tính năng -->
+        <section class="bg-surface-soft py-16 lg:py-24" aria-labelledby="comparison-title">
+            <div class="mx-auto w-full max-w-7xl px-5 xl:px-0">
+                <div class="section-heading">
+                    <p class="font-semibold text-brand-600">
+                        So sánh chi tiết
+                    </p>
+
+                    <h2 id="comparison-title" class="title-section">
+                        Mỗi gói học có những gì?
+                    </h2>
+
+                    <p class="text-lg text-muted">
+                        So sánh các tính năng để lựa chọn lộ trình phù hợp với
+                        nhu cầu của bạn.
+                    </p>
+                </div>
+
+                <p class="mt-8 text-sm text-muted lg:hidden">
+                    Vuốt ngang để xem hết bảng.
+                </p>
+
+                <div class="mt-4 overflow-x-auto lg:mt-10">
+                    <table class="min-w-[720px] w-full border-collapse text-left">
+                        <caption class="sr-only">
+                            So sánh tính năng các gói học SkillUp English.
+                        </caption>
+
+                        <thead>
+                            <tr class="border-b border-line">
+                                <th scope="col" class="px-5 py-4 font-semibold text-ink">
+                                    Tính năng
+                                </th>
+
+                                <th scope="col" class="px-5 py-4 font-semibold text-ink">
+                                    Cơ bản
+                                </th>
+
+                                <th scope="col" class="px-5 py-4 font-semibold text-brand-600">
+                                    Tiêu chuẩn
+                                </th>
+
+                                <th scope="col" class="px-5 py-4 font-semibold text-ink">
+                                    Toàn diện
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="border-b border-line">
+                                <th scope="row" class="px-5 py-4 font-medium">
+                                    Bài học nền tảng
+                                </th>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Có
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Có
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Có
+                                </td>
+                            </tr>
+
+                            <tr class="border-b border-line">
+                                <th scope="row" class="px-5 py-4 font-medium">
+                                    Theo dõi tiến độ
+                                </th>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Cơ bản
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Chi tiết
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Chi tiết
+                                </td>
+                            </tr>
+
+                            <tr class="border-b border-line">
+                                <th scope="row" class="px-5 py-4 font-medium">
+                                    Luyện nghe và phát âm
+                                </th>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Giới hạn
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Không giới hạn
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Không giới hạn
+                                </td>
+                            </tr>
+
+                            <tr class="border-b border-line">
+                                <th scope="row" class="px-5 py-4 font-medium">
+                                    Lộ trình cá nhân hóa
+                                </th>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Không
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Có
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Có
+                                </td>
+                            </tr>
+
+                            <tr class="border-b border-line">
+                                <th scope="row" class="px-5 py-4 font-medium">
+                                    Phản hồi bài nói và bài viết
+                                </th>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Không
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Không
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Có
+                                </td>
+                            </tr>
+
+                            <tr class="border-b border-line">
+                                <th scope="row" class="px-5 py-4 font-medium">
+                                    Hỗ trợ học tập
+                                </th>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Cộng đồng
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Qua email
+                                </td>
+
+                                <td class="px-5 py-4 text-muted">
+                                    Ưu tiên
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" class="px-5 py-4 font-medium">
+                                    Học phí
+                                </th>
+
+                                <td class="px-5 py-4 font-semibold">
+                                    0đ
+                                </td>
+
+                                <td class="px-5 py-4 font-semibold text-brand-600">
+                                    149.000đ
+                                </td>
+
+                                <td class="px-5 py-4 font-semibold">
+                                    249.000đ
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Câu hỏi về thanh toán -->
+        <section class="bg-surface py-16 lg:py-24" aria-labelledby="payment-faq-title">
+            <div class="mx-auto grid w-full max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_1.4fr] xl:px-0">
+                <div class="flex flex-col gap-4">
+                    <p class="font-semibold text-brand-600">
+                        Hỗ trợ thanh toán
+                    </p>
+
+                    <h2 id="payment-faq-title"
+                        class="font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+                        Câu hỏi về học phí
+                    </h2>
+
+                    <p class="text-lg leading-7 text-muted">
+                        Những thông tin cần biết trước khi đăng ký gói học
+                        SkillUp English.
+                    </p>
+                </div>
+
+                <div class="flex flex-col border-t border-line">
+                    <details class="group border-b border-line py-5" open>
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                            Tôi có thể sử dụng miễn phí không?
+
+                            <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
+                                ⌄
+                            </span>
+                        </summary>
+
+                        <p class="pt-4 leading-7 text-muted">
+                            Có. Gói Cơ bản cho phép bạn học các nội dung nền
+                            tảng và theo dõi tiến độ mà không mất phí.
+                        </p>
+                    </details>
+
+                    <details class="group border-b border-line py-5">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                            Tôi có thể đổi gói học không?
+
+                            <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
+                                ⌄
+                            </span>
+                        </summary>
+
+                        <p class="pt-4 leading-7 text-muted">
+                            Bạn có thể thay đổi gói học để phù hợp với nhu cầu
+                            ở từng giai đoạn.
+                        </p>
+                    </details>
+
+                    <details class="group border-b border-line py-5">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                            SkillUp English hỗ trợ thanh toán như thế nào?
+
+                            <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
+                                ⌄
+                            </span>
+                        </summary>
+
+                        <p class="pt-4 leading-7 text-muted">
+                            Bạn có thể liên hệ đội ngũ tư vấn để được hướng dẫn
+                            lựa chọn gói học và phương thức thanh toán phù hợp.
+                        </p>
+                    </details>
+
+                    <details class="group border-b border-line py-5">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                            Tôi cần hỗ trợ thì liên hệ ở đâu?
+
+                            <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
+                                ⌄
+                            </span>
+                        </summary>
+
+                        <p class="pt-4 leading-7 text-muted">
+                            Bạn có thể gửi yêu cầu tại
+                            <a href="./contact.html" class="font-semibold text-brand-600 hover:text-brand-700">
+                                trang liên hệ
+                            </a>
+                            để được hỗ trợ.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 10. Footer -->
+    <footer class="bg-surface">
+        <div class="mx-auto flex w-full max-w-7xl flex-col
+               gap-16 px-5 py-16 xl:px-0">
+            <!-- Các nhóm liên kết phía trên -->
+            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                <nav class="footer-group" aria-labelledby="footer-product">
+                    <h2 id="footer-product" class="text-sm font-semibold uppercase text-ink">
+                        Sản phẩm
+                    </h2>
+
+                    <ul class="footer-links">
+                        <li><a href="./index.html#features">Tính năng</a></li>
+                        <li><a href="./index.html#pricing">Gói học</a></li>
+                        <li><a href="./index.html#stats">Thành tựu</a></li>
+                        <li><a href="./index.html#testimonials">Đánh giá</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-group" aria-labelledby="footer-learning">
+                    <h2 id="footer-learning" class="text-sm font-semibold uppercase text-ink">
+                        Học tập
+                    </h2>
+
+                    <ul class="footer-links">
+                        <li><a href="./index.html#features">Lộ trình cá nhân</a></li>
+                        <li><a href="./index.html#features">Luyện phát âm</a></li>
+                        <li><a href="./index.html#features">Theo dõi tiến độ</a></li>
+                        <li><a href="./index.html#features">Kiểm tra trình độ</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-group" aria-labelledby="footer-support">
+                    <h2 id="footer-support" class="text-sm font-semibold uppercase text-ink">
+                        Hỗ trợ
+                    </h2>
+
+                    <ul class="footer-links">
+                        <li><a href="./index.html#faq">Câu hỏi thường gặp</a></li>
+                        <li>
+                            <a href="mailto:support@skillup.example">
+                                Liên hệ
+                            </a>
+                        </li>
+                        <li><a href="#main">Hướng dẫn sử dụng</a></li>
+                        <li><a href="#main">Trung tâm trợ giúp</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-group" aria-labelledby="footer-legal">
+                    <h2 id="footer-legal" class="text-sm font-semibold uppercase text-ink">
+                        Thông tin
+                    </h2>
+
+                    <ul class="footer-links">
+                        <li><a href="#main">Giới thiệu</a></li>
+                        <li><a href="#main">Chính sách bảo mật</a></li>
+                        <li><a href="#main">Điều khoản sử dụng</a></li>
+                        <li><a href="#main">TP. Hồ Chí Minh, Việt Nam</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Thương hiệu và mạng xã hội phía dưới -->
+            <div class="flex flex-col items-center gap-5 text-center">
+                <a href="#main" class="flex items-center gap-3
+                       font-display text-2xl font-bold text-ink">
+                    <span class="grid h-8 w-8 place-items-center
+                           rounded-lg bg-brand-600
+                           text-sm font-extrabold text-white" aria-hidden="true">
+                        S
+                    </span>
+
+                    <span>SkillUp English</span>
+                </a>
+
+                <p class="text-sm text-muted">
+                    © 2026 SkillUp English. All rights reserved.
+                </p>
+
+                <div class="flex items-center gap-5" aria-label="Mạng xã hội">
+                    <a href="#" aria-label="GitHub" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/github.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+
+                    <a href="#" aria-label="Twitter" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/twitter.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+
+                    <a href="#" aria-label="Dribbble" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/dribbble.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+
+                    <a href="#" aria-label="Facebook" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/facebook-f.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
