@@ -126,4 +126,8 @@
     transform: none;
     transition: none;
   }
+
+  [data-slider-track] {
+    transition: none;
+  }
 }

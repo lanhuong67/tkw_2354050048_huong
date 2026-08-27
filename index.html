@@ -314,21 +314,59 @@
 
         <!-- 6. Cảm nhận -->
         <section id="testimonials" data-reveal class="bg-surface-soft py-24" aria-labelledby="testimonials-title">
-            <div class="mx-auto w-full max-w-3xl px-5 text-center">
+            <div data-slider class="mx-auto w-full max-w-3xl px-5 text-center">
                 <h2 id="testimonials-title" class="sr-only">Cảm nhận của người học</h2>
-                <figure class="flex flex-col items-center gap-6">
-                    <span class="font-display text-5xl leading-none text-brand-600" aria-hidden="true">“</span>
-                    <blockquote class="font-display text-2xl font-semibold leading-9 text-ink">
-                        Lộ trình rõ ràng giúp tôi biết mỗi ngày nên học gì và cần luyện thêm kỹ năng nào.
-                    </blockquote>
-                    <figcaption class="flex flex-wrap items-center justify-center gap-3">
-                        <span class="grid h-10 w-10 place-items-center rounded-pill bg-brand-600 font-bold text-white"
-                            aria-hidden="true">MA</span>
-                        <span class="font-semibold">Minh Anh</span>
-                        <span class="text-line" aria-hidden="true">|</span>
-                        <cite class="not-italic text-muted">Sinh viên, TP.HCM</cite>
-                    </figcaption>
-                </figure>
+                <div class="overflow-hidden">
+                    <div data-slider-track class="flex transition-transform duration-500">
+                        <figure data-slide class="flex w-full shrink-0 flex-col items-center gap-6 px-2">
+                            <span class="font-display text-5xl leading-none text-brand-600" aria-hidden="true">“</span>
+                            <blockquote class="font-display text-2xl font-semibold leading-9 text-ink">
+                                Lộ trình rõ ràng giúp tôi biết mỗi ngày nên học gì và cần luyện thêm kỹ năng nào.
+                            </blockquote>
+                            <figcaption class="flex flex-wrap items-center justify-center gap-3">
+                                <span class="grid h-10 w-10 place-items-center rounded-pill bg-brand-600 font-bold text-white"
+                                    aria-hidden="true">MA</span>
+                                <span class="font-semibold">Minh Anh</span>
+                                <span class="text-line" aria-hidden="true">|</span>
+                                <cite class="not-italic text-muted">Sinh viên, TP.HCM</cite>
+                            </figcaption>
+                        </figure>
+                        <figure data-slide class="flex w-full shrink-0 flex-col items-center gap-6 px-2" inert>
+                            <span class="font-display text-5xl leading-none text-brand-600" aria-hidden="true">“</span>
+                            <blockquote class="font-display text-2xl font-semibold leading-9 text-ink">
+                                Bài luyện ngắn giúp tôi duy trì thói quen học đều đặn dù lịch làm việc khá bận.
+                            </blockquote>
+                            <figcaption class="flex flex-wrap items-center justify-center gap-3">
+                                <span class="grid h-10 w-10 place-items-center rounded-pill bg-brand-600 font-bold text-white"
+                                    aria-hidden="true">TH</span>
+                                <span class="font-semibold">Tuấn Huy</span>
+                                <span class="text-line" aria-hidden="true">|</span>
+                                <cite class="not-italic text-muted">Nhân viên văn phòng, Hà Nội</cite>
+                            </figcaption>
+                        </figure>
+                        <figure data-slide class="flex w-full shrink-0 flex-col items-center gap-6 px-2" inert>
+                            <span class="font-display text-5xl leading-none text-brand-600" aria-hidden="true">“</span>
+                            <blockquote class="font-display text-2xl font-semibold leading-9 text-ink">
+                                Báo cáo tiến độ giúp tôi nhận ra phần phát âm còn yếu và tập trung cải thiện đúng chỗ.
+                            </blockquote>
+                            <figcaption class="flex flex-wrap items-center justify-center gap-3">
+                                <span class="grid h-10 w-10 place-items-center rounded-pill bg-brand-600 font-bold text-white"
+                                    aria-hidden="true">NL</span>
+                                <span class="font-semibold">Ngọc Lan</span>
+                                <span class="text-line" aria-hidden="true">|</span>
+                                <cite class="not-italic text-muted">Học viên, Đà Nẵng</cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="mt-8 flex items-center justify-center gap-4">
+                    <button type="button" data-slider-prev class="btn btn-secondary h-10 px-4"
+                        aria-label="Cảm nhận trước">←</button>
+                    <div data-slider-dots class="flex items-center gap-2" aria-label="Chọn cảm nhận"></div>
+                    <button type="button" data-slider-next class="btn btn-secondary h-10 px-4"
+                        aria-label="Cảm nhận tiếp theo">→</button>
+                </div>
+                <p data-slider-status class="sr-only" aria-live="polite"></p>
             </div>
         </section>
 
