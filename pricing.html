@@ -89,6 +89,17 @@
                         Bắt đầu miễn phí và nâng cấp khi bạn cần thêm bài học,
                         luyện phát âm và lộ trình cá nhân hóa.
                     </p>
+
+                    <div class="mt-2 flex items-center justify-center gap-3">
+                        <span class="text-sm font-semibold">Theo tháng</span>
+                        <button id="pricing-toggle" type="button" role="switch" aria-checked="false"
+                            class="relative h-7 w-12 rounded-pill bg-line transition-colors aria-checked:bg-brand-600"
+                            aria-label="Hiển thị giá theo năm">
+                            <span class="absolute left-1 top-1 h-5 w-5 rounded-pill bg-white transition-transform"
+                                aria-hidden="true"></span>
+                        </button>
+                        <span class="text-sm font-semibold">Theo năm</span>
+                    </div>
                 </div>
 
                 <ul class="grid items-stretch gap-6 lg:grid-cols-3">
@@ -105,8 +116,9 @@
                         </div>
 
                         <p class="flex items-baseline justify-center gap-2">
-                            <span class="font-display text-4xl font-extrabold">0đ</span>
-                            <span class="text-muted">
+                            <span data-price data-monthly="0" data-yearly="0"
+                                class="font-display text-4xl font-extrabold">0đ</span>
+                            <span data-price-period class="text-muted">
                                 / tháng
                             </span>
                         </p>
@@ -140,9 +152,10 @@
                         </div>
 
                         <p class="flex items-baseline justify-center gap-2">
-                            <span class="font-display text-4xl font-extrabold">149.000đ</span>
+                            <span data-price data-monthly="149000" data-yearly="1430400"
+                                class="font-display text-4xl font-extrabold">149.000đ</span>
 
-                            <span class="text-muted">
+                            <span data-price-period class="text-muted">
                                 / tháng
                             </span>
                         </p>
@@ -173,9 +186,10 @@
                         </div>
 
                         <p class="flex items-baseline justify-center gap-2">
-                            <span class="font-display text-4xl font-extrabold">249.000đ</span>
+                            <span data-price data-monthly="249000" data-yearly="2390400"
+                                class="font-display text-4xl font-extrabold">249.000đ</span>
 
-                            <span class="text-muted">
+                            <span data-price-period class="text-muted">
                                 / tháng
                             </span>
                         </p>
@@ -197,7 +211,7 @@
         </section>
 
         <!-- 2. So sánh tính năng -->
-        <section class="bg-surface-soft py-16 lg:py-24" aria-labelledby="comparison-title">
+        <section data-reveal class="bg-surface-soft py-16 lg:py-24" aria-labelledby="comparison-title">
             <div class="mx-auto w-full max-w-7xl px-5 xl:px-0">
                 <div class="section-heading">
                     <p class="font-semibold text-brand-600">
@@ -358,15 +372,17 @@
                                     Học phí
                                 </th>
 
-                                <td class="px-5 py-4 font-semibold">
+                                <td data-price data-monthly="0" data-yearly="0" class="px-5 py-4 font-semibold">
                                     0đ
                                 </td>
 
-                                <td class="px-5 py-4 font-semibold text-brand-600">
+                                <td data-price data-monthly="149000" data-yearly="1430400"
+                                    class="px-5 py-4 font-semibold text-brand-600">
                                     149.000đ
                                 </td>
 
-                                <td class="px-5 py-4 font-semibold">
+                                <td data-price data-monthly="249000" data-yearly="2390400"
+                                    class="px-5 py-4 font-semibold">
                                     249.000đ
                                 </td>
                             </tr>
@@ -377,7 +393,7 @@
         </section>
 
         <!-- 3. Câu hỏi về thanh toán -->
-        <section id="faq" class="bg-surface py-16 lg:py-24" aria-labelledby="payment-faq-title">
+        <section id="faq" data-reveal class="bg-surface py-16 lg:py-24" aria-labelledby="payment-faq-title">
             <div class="mx-auto grid w-full max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_1.4fr] xl:px-0">
                 <div class="flex flex-col gap-4">
                     <p class="font-semibold text-brand-600">
