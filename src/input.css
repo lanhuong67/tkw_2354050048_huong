@@ -109,6 +109,11 @@
   }
 }
 
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--color-brand-600);
+  outline-offset: 3px;
+}
+
 .reveal-ready [data-reveal] {
   opacity: 0;
   transform: translateY(1.5rem);

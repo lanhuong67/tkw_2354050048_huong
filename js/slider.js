@@ -53,6 +53,24 @@ export function initSlider() {
 
   previous.addEventListener("click", () => go(index - 1, true));
   next.addEventListener("click", () => go(index + 1, true));
+  root.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      go(index - 1, true);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      go(index + 1, true);
+    }
+    if (event.key === "Home") {
+      event.preventDefault();
+      go(0, true);
+    }
+    if (event.key === "End") {
+      event.preventDefault();
+      go(slides.length - 1, true);
+    }
+  });
   root.addEventListener("mouseenter", stop);
   root.addEventListener("mouseleave", start);
   root.addEventListener("focusin", stop);

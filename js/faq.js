@@ -23,4 +23,20 @@ export function initFaq() {
     triggers.forEach((item) => setOpen(item, false));
     if (willOpen) setOpen(trigger, true);
   });
+
+  root.addEventListener("keydown", (event) => {
+    const trigger = event.target.closest("[data-faq-trigger]");
+    if (!trigger || !root.contains(trigger)) return;
+
+    const currentIndex = triggers.indexOf(trigger);
+    let nextIndex;
+    if (event.key === "ArrowDown") nextIndex = (currentIndex + 1) % triggers.length;
+    if (event.key === "ArrowUp") nextIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = triggers.length - 1;
+    if (nextIndex === undefined) return;
+
+    event.preventDefault();
+    triggers[nextIndex].focus();
+  });
 }
