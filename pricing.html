@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const saved = localStorage.getItem("theme");
+            const dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.classList.toggle("dark", dark);
+        })();
+    </script>
     <meta name="description"
         content="Khám phá các gói học tiếng Anh trực tuyến và so sánh tính năng của SkillUp English.">
     <title>Học phí - SkillUp English</title>
@@ -36,6 +43,9 @@
                 <li><a class="font-medium hover:text-brand-600" href="./index.html#faq">Câu hỏi</a></li>
             </ul>
             <div class="flex items-center gap-4">
+                <button type="button" data-theme-toggle role="switch" aria-checked="false"
+                    class="grid h-10 w-10 place-items-center rounded-lg border border-line bg-surface text-xl text-ink"
+                    aria-label="Bật chế độ tối"><span aria-hidden="true">◐</span></button>
                 <a href="./index.html#features" class="hidden text-sm font-medium hover:text-brand-600 lg:block">
                     Khám phá
                 </a>
@@ -367,7 +377,7 @@
         </section>
 
         <!-- 3. Câu hỏi về thanh toán -->
-        <section class="bg-surface py-16 lg:py-24" aria-labelledby="payment-faq-title">
+        <section id="faq" class="bg-surface py-16 lg:py-24" aria-labelledby="payment-faq-title">
             <div class="mx-auto grid w-full max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_1.4fr] xl:px-0">
                 <div class="flex flex-col gap-4">
                     <p class="font-semibold text-brand-600">
@@ -387,7 +397,7 @@
 
                 <div class="flex flex-col border-t border-line">
                     <details class="group border-b border-line py-5" open>
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                        <summary data-faq-trigger class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
                             Tôi có thể sử dụng miễn phí không?
 
                             <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
@@ -402,7 +412,7 @@
                     </details>
 
                     <details class="group border-b border-line py-5">
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                        <summary data-faq-trigger class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
                             Tôi có thể đổi gói học không?
 
                             <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
@@ -417,7 +427,7 @@
                     </details>
 
                     <details class="group border-b border-line py-5">
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                        <summary data-faq-trigger class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
                             SkillUp English hỗ trợ thanh toán như thế nào?
 
                             <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
@@ -432,7 +442,7 @@
                     </details>
 
                     <details class="group border-b border-line py-5">
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                        <summary data-faq-trigger class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
                             Tôi cần hỗ trợ thì liên hệ ở đâu?
 
                             <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
