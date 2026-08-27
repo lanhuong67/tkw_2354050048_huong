@@ -3,454 +3,531 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SkillUp English - phần mềm học tiếng Anh trực tuyến với lộ trình cá nhân hóa.">
     <title>SkillUp English - Học tiếng Anh trực tuyến</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
-
-    <link
-        rel="stylesheet"
-        href="./dist/output.css"
-    >
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./dist/output.css">
 </head>
-<body class="bg-surface font-body text-ink">
 
-    <!-- Skip link -->
-    <a
-        href="#main"
-        class="sr-only focus:not-sr-only focus:absolute
-               focus:z-50 focus:bg-white focus:p-4"
-    >
-        Bỏ qua đến nội dung chính
-    </a>
+<body class="bg-surface font-body text-ink">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4">Bỏ qua đến nội
+        dung chính</a>
 
     <!-- 1. Navbar -->
     <header class="bg-surface">
-        <nav
-            class="mx-auto flex w-full max-w-6xl items-center
-                   justify-between gap-8 px-5 py-6"
-            aria-label="Điều hướng chính"
-        >
-
-            <a
-                href="#main"
-                class="font-display text-2xl font-bold text-brand-600"
-            >
-                SkillUp English
+        <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-5 py-6 xl:px-0"
+            aria-label="Điều hướng chính">
+            <a href="#main" class="flex shrink-0 items-center gap-3 font-display text-2xl font-bold text-ink">
+                <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-sm font-extrabold text-white"
+                    aria-hidden="true">S</span>
+                <span>SkillUp English</span>
             </a>
-
             <ul class="hidden flex-1 items-center gap-8 lg:flex">
-                <li>
-                    <a class="font-medium text-ink hover:text-brand-600"
-                       href="#features">
-                        Tính năng
-                    </a>
-                </li>
-
-                <li>
-                    <a class="font-medium text-ink hover:text-brand-600"
-                       href="#stats">
-                        Thành tựu
-                    </a>
-                </li>
-
-                <li>
-                    <a class="font-medium text-ink hover:text-brand-600"
-                       href="#testimonials">
-                        Đánh giá
-                    </a>
-                </li>
-
-                <li>
-                    <a class="font-medium text-ink hover:text-brand-600"
-                       href="#pricing">
-                        Học phí
-                    </a>
-                </li>
-
-                <li>
-                    <a class="font-medium text-ink hover:text-brand-600"
-                       href="#faq">
-                        Câu hỏi
-                    </a>
-                </li>
+                <li><a class="font-medium hover:text-brand-600" href="#features">Tính năng</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="#stats">Thành tựu</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="#testimonials">Đánh giá</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="#pricing">Học phí</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="#faq">Câu hỏi</a></li>
             </ul>
-
             <div class="flex items-center gap-4">
-                <a
-                    href="#features"
-                    class="hidden text-sm font-medium text-ink sm:block"
-                >
-                    Khám phá
-                </a>
-
-                <a href="#pricing" class="btn btn-primary">
-                    Bắt đầu học
-                </a>
+                <a href="#features" class="hidden text-sm font-medium hover:text-brand-600 sm:block">Khám phá</a>
+                <a href="#pricing" class="btn btn-primary btn-sm">Bắt đầu học</a>
             </div>
-
         </nav>
     </header>
 
     <main id="main">
         <!-- 2. Hero -->
         <section
-            class="section grid items-center gap-14
-                lg:grid-cols-2 lg:gap-16"
-            aria-labelledby="hero-title"
-        >
-            <!-- Nội dung trái -->
+            class="mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1fr_28rem] lg:gap-24 xl:px-0"
+            aria-labelledby="hero-title">
             <div class="flex flex-col items-start gap-10">
-
-                <div class="space-y-6">
-                    <h1
-                        id="hero-title"
-                        class="font-display text-4xl font-black
-                            leading-tight text-ink
-                            sm:text-5xl
-                            lg:text-6xl lg:leading-none"
-                    >
-                        Học tiếng Anh dễ dàng,
-                        tự tin giao tiếp mỗi ngày
-                </h1>
-
-                <p
-                    class="max-w-2xl text-lg leading-7
-                       text-muted lg:text-xl lg:leading-8"
-                >
-                    SkillUp English giúp bạn phát triển kỹ năng
-                    nghe, nói, đọc và viết thông qua lộ trình học
-                    phù hợp với trình độ.
-                </p>
+                <div class="flex flex-col gap-6">
+                    <h1 id="hero-title" class="font-body text-4xl font-black leading-none sm:text-5xl lg:text-6xl">Học
+                        tiếng Anh dễ dàng, tự tin giao tiếp mỗi ngày</h1>
+                    <p class="max-w-2xl text-lg leading-7 text-muted lg:text-xl lg:leading-[1.5]">SkillUp English giúp
+                        bạn
+                        phát triển kỹ năng nghe, nói, đọc và viết qua lộ trình phù hợp với trình độ.</p>
+                </div>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#pricing" class="btn btn-primary">Bắt đầu học miễn phí</a>
+                    <a href="#features" class="btn btn-secondary">Khám phá lộ trình</a>
+                </div>
             </div>
-
-            <div class="flex flex-wrap gap-4">
-                <a
-                    href="#pricing"
-                    class="btn btn-primary"
-                >
-                    Bắt đầu học miễn phí
-                </a>
-
-                <a
-                    href="#features"
-                    class="btn btn-secondary"
-                >
-                    Khám phá lộ trình
-                </a>
+            <div class="flex h-[416px] w-full items-center justify-end lg:w-[448px]"
+                aria-label="Minh họa học tiếng Anh trực tuyến">
+                <img class="h-[416px] w-full max-w-[532px] object-contain lg:w-[532px] lg:max-w-none"
+                    src="./assets/img/skillup-hero.png"
+                    alt="Lớp học tiếng Anh trực tuyến với giáo viên, sách, tai nghe và micro" width="532" height="416">
             </div>
-        </div>
-
-
-        <!-- Nội dung phải -->
-        <div
-            class="rounded-card bg-brand-50 p-5
-               sm:p-8"
-            aria-label="Minh họa lộ trình học SkillUp English"
-        >
-            <div
-                class="rounded-card bg-surface p-6
-                   shadow-lg"
-            >
-                <p
-                    class="text-sm font-semibold
-                       text-brand-600"
-                >
-                    Lộ trình hôm nay
-                </p>
-
-                <p
-                    class="mt-2 font-display text-2xl
-                       font-bold text-ink"
-                >
-                    English for Communication
-                </p>
-
-                <p class="mt-2 text-muted">
-                    Hoàn thành từng kỹ năng để cải thiện
-                    khả năng giao tiếp.
-                </p>
-
-                <ul class="mt-6 space-y-4">
-
-                    <li
-                        class="flex items-center justify-between
-                           rounded-card bg-accent-50 p-4"
-                    >
-                        <span class="font-medium text-ink">
-                            Listening
-                        </span>
-
-                        <span class="text-accent-500">
-                            Nghe
-                        </span>
-                    </li>
-
-                    <li
-                        class="flex items-center justify-between
-                           rounded-card bg-success-50 p-4"
-                    >
-                        <span class="font-medium text-ink">
-                            Speaking
-                        </span>
-
-                        <span class="text-success-500">
-                            Nói
-                        </span>
-                    </li>
-
-                    <li
-                        class="flex items-center justify-between
-                           rounded-card bg-action-50 p-4"
-                    >
-                        <span class="font-medium text-ink">
-                            Reading
-                        </span>
-
-                        <span class="text-action-500">
-                            Đọc
-                        </span>
-                        </li>
-
-                    <li
-                        class="flex items-center justify-between
-                           rounded-card bg-warning-50 p-4"
-                    >
-                        <span class="font-medium text-ink">
-                            Writing
-                        </span>
-
-                        <span class="text-warning-500">
-                            Viết
-                        </span>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-        <!-- 3. Đối tác -->
-        <section aria-labelledby="partners-title">
-            <h2 id="partners-title">
-                Đồng hành cùng người học
-            </h2>
-
-            <ul>
-                <li>Đối tác giáo dục 1</li>
-                <li>Đối tác giáo dục 2</li>
-                <li>Đối tác giáo dục 3</li>
-                <li>Đối tác giáo dục 4</li>
-            </ul>
         </section>
 
+        <!-- 3. Dải khách hàng -->
+        <section class="mx-auto w-full max-w-7xl px-5 pb-24 xl:px-0" aria-labelledby="partners-title">
+            <h2 id="partners-title" class="sr-only">
+                Đồng hành cùng cộng đồng học tập
+            </h2>
+
+            <ul class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 lg:justify-between lg:gap-x-0"
+                aria-label="Các cộng đồng học tập">
+                <li class="partner-logo w-32"><span class="partner-mark" aria-hidden="true">E</span><span>EduNext</span>
+                </li>
+                <li class="partner-logo w-[150px]"><span class="partner-mark"
+                        aria-hidden="true">L</span><span>LearnHub</span></li>
+                <li class="partner-logo w-32"><span class="partner-mark" aria-hidden="true">S</span><span>StudyGo</span>
+                </li>
+                <li class="partner-logo w-[136px]"><span class="partner-mark"
+                        aria-hidden="true">B</span><span>BrightPath</span></li>
+                <li class="partner-logo w-[110px]"><span class="partner-mark"
+                        aria-hidden="true">L</span><span>LinguaLab</span></li>
+                <li class="partner-logo w-[132px]"><span class="partner-mark"
+                        aria-hidden="true">O</span><span>OpenClass</span></li>
+            </ul>
+        </section>
 
         <!-- 4. Tính năng -->
-        <section id="features" aria-labelledby="features-title">
-            <h2 id="features-title">
-                Học hiệu quả theo cách của bạn
-            </h2>
+        <section id="features" class="bg-surface-soft py-24" aria-labelledby="features-title">
+            <div class="mx-auto flex w-full max-w-7xl flex-col gap-20 px-5 xl:px-0">
+                <div class="grid items-center gap-16 lg:grid-cols-2">
+                    <div class="flex flex-col items-start gap-8">
+                        <div class="flex flex-col gap-4">
+                            <h2 id="features-title"
+                                class="font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+                                Học với những công cụ bạn cần
+                            </h2>
+                            <p class="text-xl leading-[1.5] text-muted">
+                                SkillUp English kết hợp lộ trình cá nhân hóa, luyện phát âm và theo dõi tiến độ trong
+                                một trải nghiệm học tập rõ ràng.
+                            </p>
+                        </div>
+                        <div class="h-px w-full bg-line" aria-hidden="true"></div>
+                        <div class="flex flex-col gap-6">
+                            <ul class="flex flex-col gap-4 font-medium">
+                                <li class="check-item"><span aria-hidden="true">✓</span>Lộ trình phù hợp với trình độ
+                                </li>
+                                <li class="check-item"><span aria-hidden="true">✓</span>Luyện nghe và phát âm mỗi ngày
+                                </li>
+                                <li class="check-item"><span aria-hidden="true">✓</span>Theo dõi kết quả học tập</li>
+                            </ul>
+                            <p class="text-xl leading-[1.5] text-muted">Mỗi bài học ngắn gọn, có mục tiêu rõ ràng và dễ
+                                duy trì trong lịch học hằng ngày.</p>
+                        </div>
+                    </div>
+                    <div class="feature-visual" aria-label="Minh họa bảng theo dõi tiến độ học tập">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="mock-card col-span-2">
+                                <div class="flex items-center justify-between"><span class="font-semibold">Tiến độ
+                                        tuần</span><span class="text-sm text-brand-600">82%</span></div>
+                                <div class="h-3 overflow-hidden rounded-pill bg-brand-50">
+                                    <div class="h-full w-4/5 rounded-pill bg-brand-600"></div>
+                                </div>
+                            </div>
+                            <div class="mock-card"><span class="text-sm text-muted">Chuỗi ngày học</span><strong
+                                    class="text-3xl text-brand-600">12</strong><span class="text-sm text-muted">ngày
+                                    liên tiếp</span></div>
+                            <div class="mock-card"><span class="text-sm text-muted">Bài đã hoàn thành</span><strong
+                                    class="text-3xl text-accent-500">36</strong><span class="text-sm text-muted">trong
+                                    tháng này</span></div>
+                            <div class="mock-card col-span-2">
+                                <span class="text-sm font-semibold">Kỹ năng</span>
+                                <div class="grid grid-cols-4 items-end gap-3">
+                                    <span class="h-16 rounded-t bg-accent-500"></span><span
+                                        class="h-24 rounded-t bg-brand-600"></span><span
+                                        class="h-20 rounded-t bg-success-500"></span><span
+                                        class="h-12 rounded-t bg-warning-500"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <p>
-                Những công cụ giúp việc học tiếng Anh trở nên
-                rõ ràng và dễ duy trì hơn.
-            </p>
-
-            <ul>
-                <li>
-                    <h3>Lộ trình cá nhân hóa</h3>
-                    <p>
-                        Học theo nội dung phù hợp với trình độ
-                        và mục tiêu của bạn.
-                    </p>
-                </li>
-
-                <li>
-                    <h3>Luyện phát âm</h3>
-                    <p>
-                        Thực hành phát âm và cải thiện khả năng
-                        giao tiếp tiếng Anh.
-                    </p>
-                </li>
-
-                <li>
-                    <h3>Theo dõi tiến độ</h3>
-                    <p>
-                        Theo dõi bài học đã hoàn thành và
-                        kết quả học tập.
-                    </p>
-                </li>
-            </ul>
+                <div class="grid items-center gap-16 lg:grid-cols-2">
+                    <div class="feature-visual">
+                        <div class="flex flex-col gap-4">
+                            <div class="mock-card">
+                                <span class="text-sm text-muted">Bài học hôm nay</span>
+                                <strong class="text-xl">English for Communication</strong>
+                                <div class="flex items-center justify-between rounded-lg bg-accent-50 p-4">
+                                    <span>Listening</span><span class="text-accent-500">Hoàn thành</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="mock-card"><strong class="text-2xl text-success-500">A2</strong><span
+                                        class="text-sm text-muted">Trình độ hiện tại</span></div>
+                                <div class="mock-card"><strong class="text-2xl text-action-500">4/5</strong><span
+                                        class="text-sm text-muted">Mục tiêu tuần</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-start gap-8">
+                        <div class="flex flex-col gap-4">
+                            <h2 class="font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+                                Phát triển đủ bốn kỹ năng
+                            </h2>
+                            <p class="text-xl leading-[1.5] text-muted">
+                                Nội dung được tổ chức theo những tình huống giao tiếp thực tế để bạn sử dụng tiếng Anh
+                                tự nhiên hơn.
+                            </p>
+                        </div>
+                        <div class="h-px w-full bg-line" aria-hidden="true"></div>
+                        <ul class="flex flex-col gap-4 font-medium">
+                            <li class="check-item"><span aria-hidden="true">✓</span>Nghe và nhận biết ý chính</li>
+                            <li class="check-item"><span aria-hidden="true">✓</span>Nói và luyện phát âm</li>
+                            <li class="check-item"><span aria-hidden="true">✓</span>Đọc theo chủ đề thực tế</li>
+                            <li class="check-item"><span aria-hidden="true">✓</span>Viết câu và đoạn văn ngắn</li>
+                            <li class="check-item"><span aria-hidden="true">✓</span>Ôn tập theo tiến độ cá nhân</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
-
 
         <!-- 5. Số liệu -->
-        <section id="stats" aria-labelledby="stats-title">
-            <h2 id="stats-title">
-                Học từng ngày, tiến bộ từng bước
-            </h2>
+        <section id="stats" class="bg-surface py-24" aria-labelledby="stats-title">
+            <div class="mx-auto grid w-full max-w-7xl items-center gap-16 px-5 lg:grid-cols-2 xl:px-0">
+                <div class="flex flex-col items-start gap-6">
+                    <div class="flex flex-col gap-4">
+                        <p class="font-semibold text-brand-600">Hành trình học tập rõ ràng</p>
+                        <h2 id="stats-title"
+                            class="font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+                            Đồng hành cùng người học trên mỗi bước tiến
+                        </h2>
+                        <p class="text-xl leading-[1.5] text-muted">
+                            SkillUp English cung cấp bài học ngắn gọn, theo dõi tiến độ và hỗ trợ người học phát triển
+                            đầy đủ bốn kỹ năng tiếng Anh.
+                        </p>
+                    </div>
+                    <a href="#testimonials" class="font-semibold text-brand-600 hover:text-brand-700">
+                        Xem cảm nhận người học →
+                    </a>
+                </div>
 
-            <ul>
-                <li>
-                    <strong>10.000+</strong>
-                    <span>Người học</span>
-                </li>
-
-                <li>
-                    <strong>500+</strong>
-                    <span>Bài học</span>
-                </li>
-
-                <li>
-                    <strong>50+</strong>
-                    <span>Chủ đề thực tế</span>
-                </li>
-
-                <li>
-                    <strong>4</strong>
-                    <span>Kỹ năng tiếng Anh</span>
-                </li>
-            </ul>
+                <dl class="grid gap-8 sm:grid-cols-2">
+                    <div class="flex flex-col gap-2">
+                        <dt class="order-2 text-base text-muted">Người học đăng ký</dt>
+                        <dd class="order-1 font-display text-4xl font-extrabold text-brand-600">10.000+</dd>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <dt class="order-2 text-base text-muted">Bài học trực tuyến</dt>
+                        <dd class="order-1 font-display text-4xl font-extrabold text-brand-600">500+</dd>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <dt class="order-2 text-base text-muted">Chủ đề giao tiếp</dt>
+                        <dd class="order-1 font-display text-4xl font-extrabold text-brand-600">50+</dd>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <dt class="order-2 text-base text-muted">Kỹ năng tiếng Anh</dt>
+                        <dd class="order-1 font-display text-4xl font-extrabold text-brand-600">4</dd>
+                    </div>
+                </dl>
+            </div>
         </section>
-
 
         <!-- 6. Cảm nhận -->
-        <section id="testimonials"
-                 aria-labelledby="testimonials-title">
-
-            <h2 id="testimonials-title">
-                Người học nói gì về SkillUp English?
-            </h2>
-
-            <article>
-                <h3>Minh Anh</h3>
-                <p>
-                    Lộ trình rõ ràng giúp tôi biết mỗi ngày
-                    mình nên học và luyện kỹ năng nào.
-                </p>
-            </article>
-
-            <article>
-                <h3>Hoàng Nam</h3>
-                <p>
-                    Các bài học ngắn giúp tôi dễ sắp xếp
-                    thời gian học sau giờ học.
-                </p>
-            </article>
+        <section id="testimonials" class="bg-surface-soft py-24" aria-labelledby="testimonials-title">
+            <div class="mx-auto w-full max-w-3xl px-5 text-center">
+                <h2 id="testimonials-title" class="sr-only">Cảm nhận của người học</h2>
+                <figure class="flex flex-col items-center gap-6">
+                    <span class="font-display text-5xl leading-none text-brand-600" aria-hidden="true">“</span>
+                    <blockquote class="font-display text-2xl font-semibold leading-9 text-ink">
+                        Lộ trình rõ ràng giúp tôi biết mỗi ngày nên học gì và cần luyện thêm kỹ năng nào.
+                    </blockquote>
+                    <figcaption class="flex flex-wrap items-center justify-center gap-3">
+                        <span class="grid h-10 w-10 place-items-center rounded-pill bg-brand-600 font-bold text-white"
+                            aria-hidden="true">MA</span>
+                        <span class="font-semibold">Minh Anh</span>
+                        <span class="text-line" aria-hidden="true">|</span>
+                        <cite class="not-italic text-muted">Sinh viên, TP.HCM</cite>
+                    </figcaption>
+                </figure>
+            </div>
         </section>
-
 
         <!-- 7. Bảng giá -->
-        <section id="pricing" aria-labelledby="pricing-title">
-            <h2 id="pricing-title">
-                Chọn gói học phù hợp
-            </h2>
-
-            <article>
-                <h3>Cơ bản</h3>
-                <p>Dành cho người mới bắt đầu.</p>
-                <a href="#">Chọn gói Cơ bản</a>
-            </article>
-
-            <article>
-                <h3>Tiêu chuẩn</h3>
-                <p>Dành cho người muốn học đầy đủ bốn kỹ năng.</p>
-                <a href="#">Chọn gói Tiêu chuẩn</a>
-            </article>
-
-            <article>
-                <h3>Toàn diện</h3>
-                <p>Dành cho người muốn học theo lộ trình chuyên sâu.</p>
-                <a href="#">Chọn gói Toàn diện</a>
-            </article>
+        <section id="pricing" class="bg-surface py-24" aria-labelledby="pricing-title">
+            <div class="mx-auto flex w-full max-w-7xl flex-col gap-16 px-5 xl:px-0">
+                <div class="section-heading">
+                    <h2 id="pricing-title" class="title-section">Chọn gói học phù hợp</h2>
+                    <p class="text-lg text-muted">Bắt đầu miễn phí và nâng cấp khi bạn cần thêm bài học chuyên sâu.</p>
+                </div>
+                <ul class="grid items-stretch gap-6 lg:grid-cols-3">
+                    <li class="card price-card">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="font-display text-2xl font-bold">Cơ bản</h3>
+                            <p class="text-muted">Dành cho người mới bắt đầu.</p>
+                        </div>
+                        <p class="flex items-baseline justify-center gap-2"></p>
+                        <span class="price">0đ</span>
+                        <span class="text-muted"> / tháng</span>
+                        </p>
+                        <ul class="feature-list">
+                            <li>✓ Bài học nền tảng</li>
+                            <li>✓ Theo dõi tiến độ</li>
+                            <li>✓ 5 phút luyện tập mỗi ngày</li>
+                        </ul><a href="#cta" class="btn btn-secondary mt-auto w-full">Chọn gói Cơ bản</a>
+                    </li>
+                    <li class="card price-card relative ring-2 ring-brand-600"><span
+                            class="badge absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-600 text-white">Được chọn
+                            nhiều nhất</span>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="font-display text-2xl font-bold">Tiêu chuẩn</h3>
+                            <p class="text-muted">Học đầy đủ bốn kỹ năng.</p>
+                        </div>
+                        <p class="flex items-baseline justify-center gap-2"></p>
+                        <span class="price">149.000đ</span>
+                        <span class="text-muted"> / tháng</span>
+                        </p>
+                        <ul class="feature-list">
+                            <li>✓ Toàn bộ bài học cơ bản</li>
+                            <li>✓ Luyện phát âm và nghe nói</li>
+                            <li>✓ Lộ trình cá nhân hóa</li>
+                            <li>✓ Báo cáo tiến độ hàng tuần</li>
+                        </ul><a href="#cta" class="btn btn-primary mt-auto w-full">Chọn gói Tiêu chuẩn</a>
+                    </li>
+                    <li class="card price-card">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="font-display text-2xl font-bold">Toàn diện</h3>
+                            <p class="text-muted">Lộ trình chuyên sâu theo mục tiêu.</p>
+                        </div>
+                        <p class="flex items-baseline justify-center gap-2"></p>
+                        <span class="price">249.000đ</span>
+                        <span class="text-muted"> / tháng</span>
+                        </p>
+                        <ul class="feature-list">
+                            <li>✓ Toàn bộ gói Tiêu chuẩn</li>
+                            <li>✓ Bài luyện chuyên sâu</li>
+                            <li>✓ Phản hồi bài nói và bài viết</li>
+                            <li>✓ Lộ trình giao tiếp thực tế</li>
+                            <li>✓ Hỗ trợ ưu tiên</li>
+                        </ul><a href="#cta" class="btn btn-secondary mt-auto w-full">Chọn gói Toàn diện</a>
+                    </li>
+                </ul>
+            </div>
         </section>
-
 
         <!-- 8. FAQ -->
-        <section id="faq" aria-labelledby="faq-title">
-            <h2 id="faq-title">
-                Câu hỏi thường gặp
-            </h2>
+        <section id="faq" class="bg-surface py-24" aria-labelledby="faq-title">
+            <div class="mx-auto grid w-full max-w-7xl gap-12
+               px-5 lg:grid-cols-[1fr_1.4fr] xl:px-0">
+                <div class="flex flex-col gap-4">
+                    <p class="font-semibold text-brand-600">
+                        Hỗ trợ người học
+                    </p>
 
-            <article>
-                <h3>SkillUp English phù hợp với ai?</h3>
-                <p>
-                    Nền tảng phù hợp với học sinh, sinh viên
-                    và người muốn cải thiện tiếng Anh.
-                </p>
-            </article>
+                    <h2 id="faq-title" class="font-display text-3xl font-extrabold
+                       leading-tight tracking-tight sm:text-4xl">
+                        Câu hỏi thường gặp
+                    </h2>
 
-            <article>
-                <h3>Tôi có thể học trên điện thoại không?</h3>
-                <p>
-                    Nội dung được thiết kế để có thể sử dụng
-                    trên nhiều kích thước màn hình.
-                </p>
-            </article>
+                    <p class="text-xl leading-[1.5] text-muted">
+                        Những thông tin cần biết trước khi bắt đầu
+                        học cùng SkillUp English.
+                    </p>
+                </div>
 
-            <article>
-                <h3>Tôi bắt đầu học từ đâu?</h3>
-                <p>
-                    Bạn có thể xác định trình độ và lựa chọn
-                    lộ trình phù hợp với mục tiêu.
-                </p>
-            </article>
+                <div class="flex flex-col border-t border-line">
+                    <details class="group border-b border-line py-5" open>
+                        <summary class="flex cursor-pointer list-none
+                           items-center justify-between gap-6
+                           font-semibold">
+                            SkillUp English phù hợp với ai?
+
+                            <span class="text-xl text-brand-600
+                               group-open:rotate-180" aria-hidden="true">
+                                ⌄
+                            </span>
+                        </summary>
+
+                        <p class="pt-4 leading-7 text-muted">
+                            Phù hợp với học sinh, sinh viên và người đi
+                            làm muốn cải thiện tiếng Anh theo một lộ
+                            trình rõ ràng.
+                        </p>
+                    </details>
+
+                    <details class="group border-b border-line py-5">
+                        <summary class="flex cursor-pointer list-none
+                           items-center justify-between gap-6
+                           font-semibold">
+                            Tôi có thể học trên điện thoại không?
+
+                            <span class="text-xl text-brand-600
+                               group-open:rotate-180" aria-hidden="true">
+                                ⌄
+                            </span>
+                        </summary>
+
+                        <p class="pt-4 leading-7 text-muted">
+                            Có. Giao diện có thể sử dụng trên máy tính,
+                            máy tính bảng và điện thoại.
+                        </p>
+                    </details>
+
+                    <details class="group border-b border-line py-5">
+                        <summary class="flex cursor-pointer list-none
+                           items-center justify-between gap-6
+                           font-semibold">
+                            Tôi nên bắt đầu học từ đâu?
+
+                            <span class="text-xl text-brand-600
+                               group-open:rotate-180" aria-hidden="true">
+                                ⌄
+                            </span>
+                        </summary>
+
+                        <p class="pt-4 leading-7 text-muted">
+                            Bạn làm bài kiểm tra trình độ ngắn, sau đó
+                            hệ thống đề xuất lộ trình phù hợp.
+                        </p>
+                    </details>
+
+                    <details class="group border-b border-line py-5">
+                        <summary class="flex cursor-pointer list-none
+                           items-center justify-between gap-6
+                           font-semibold">
+                            Tôi có thể thay đổi gói học không?
+
+                            <span class="text-xl text-brand-600
+                               group-open:rotate-180" aria-hidden="true">
+                                ⌄
+                            </span>
+                        </summary>
+
+                        <p class="pt-4 leading-7 text-muted">
+                            Bạn có thể lựa chọn lại gói học phù hợp với
+                            nhu cầu ở từng giai đoạn.
+                        </p>
+                    </details>
+                </div>
+            </div>
         </section>
-
 
         <!-- 9. CTA -->
-        <section aria-labelledby="cta-title">
-            <h2 id="cta-title">
-                Sẵn sàng cải thiện tiếng Anh của bạn?
-            </h2>
+        <section id="cta" class="bg-surface-soft py-24" aria-labelledby="cta-title">
+            <div class="mx-auto flex w-full max-w-2xl
+               flex-col items-center gap-6 px-5 text-center">
+                <h2 id="cta-title" claxss="font-display text-3xl font-extrabold
+                   leading-tight tracking-tight sm:text-4xl">
+                    Sẵn sàng cải thiện tiếng Anh của bạn?
+                </h2>
 
-            <p>
-                Bắt đầu xây dựng thói quen học tiếng Anh
-                cùng SkillUp English.
-            </p>
+                <p class="text-xl leading-[1.5] text-muted">
+                    Bắt đầu xây dựng thói quen học tiếng Anh cùng
+                    SkillUp English ngay hôm nay.
+                </p>
 
-            <a href="#pricing">Bắt đầu học</a>
+                <a href="#pricing" class="btn btn-primary">
+                    Bắt đầu học miễn phí
+                </a>
+            </div>
         </section>
-
     </main>
 
-
     <!-- 10. Footer -->
-    <footer>
-        <h2>SkillUp English</h2>
+    <footer class="bg-surface">
+        <div class="mx-auto flex w-full max-w-7xl flex-col
+               gap-16 px-5 py-16 xl:px-0">
+            <!-- Các nhóm liên kết phía trên -->
+            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                <nav class="footer-group" aria-labelledby="footer-product">
+                    <h2 id="footer-product" class="text-sm font-semibold uppercase text-ink">
+                        Sản phẩm
+                    </h2>
 
-        <p>
-            Nền tảng học tiếng Anh trực tuyến giúp người học
-            phát triển kỹ năng mỗi ngày.
-        </p>
+                    <ul class="footer-links">
+                        <li><a href="#features">Tính năng</a></li>
+                        <li><a href="#pricing">Gói học</a></li>
+                        <li><a href="#stats">Thành tựu</a></li>
+                        <li><a href="#testimonials">Đánh giá</a></li>
+                    </ul>
+                </nav>
 
-        <nav aria-label="Điều hướng cuối trang">
-            <ul>
-                <li><a href="#features">Tính năng</a></li>
-                <li><a href="#pricing">Học phí</a></li>
-                <li><a href="#faq">Câu hỏi thường gặp</a></li>
-            </ul>
-        </nav>
+                <nav class="footer-group" aria-labelledby="footer-learning">
+                    <h2 id="footer-learning" class="text-sm font-semibold uppercase text-ink">
+                        Học tập
+                    </h2>
 
-        <p>&copy; 2026 SkillUp English.</p>
+                    <ul class="footer-links">
+                        <li><a href="#features">Lộ trình cá nhân</a></li>
+                        <li><a href="#features">Luyện phát âm</a></li>
+                        <li><a href="#features">Theo dõi tiến độ</a></li>
+                        <li><a href="#features">Kiểm tra trình độ</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-group" aria-labelledby="footer-support">
+                    <h2 id="footer-support" class="text-sm font-semibold uppercase text-ink">
+                        Hỗ trợ
+                    </h2>
+
+                    <ul class="footer-links">
+                        <li><a href="#faq">Câu hỏi thường gặp</a></li>
+                        <li>
+                            <a href="mailto:support@skillup.example">
+                                Liên hệ
+                            </a>
+                        </li>
+                        <li><a href="#main">Hướng dẫn sử dụng</a></li>
+                        <li><a href="#main">Trung tâm trợ giúp</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-group" aria-labelledby="footer-legal">
+                    <h2 id="footer-legal" class="text-sm font-semibold uppercase text-ink">
+                        Thông tin
+                    </h2>
+
+                    <ul class="footer-links">
+                        <li><a href="#main">Giới thiệu</a></li>
+                        <li><a href="#main">Chính sách bảo mật</a></li>
+                        <li><a href="#main">Điều khoản sử dụng</a></li>
+                        <li><a href="#main">TP. Hồ Chí Minh, Việt Nam</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Thương hiệu và mạng xã hội phía dưới -->
+            <div class="flex flex-col items-center gap-5 text-center">
+                <a href="#main" class="flex items-center gap-3
+                       font-display text-2xl font-bold text-ink">
+                    <span class="grid h-8 w-8 place-items-center
+                           rounded-lg bg-brand-600
+                           text-sm font-extrabold text-white" aria-hidden="true">
+                        S
+                    </span>
+
+                    <span>SkillUp English</span>
+                </a>
+
+                <p class="text-sm text-muted">
+                    © 2026 SkillUp English. All rights reserved.
+                </p>
+
+                <div class="flex items-center gap-5" aria-label="Mạng xã hội">
+                    <a href="#" aria-label="GitHub" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/github.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+
+                    <a href="#" aria-label="Twitter" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/twitter.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+
+                    <a href="#" aria-label="Dribbble" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/dribbble.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+
+                    <a href="#" aria-label="Facebook" class="text-muted hover:opacity-70">
+                        <img src="./assets/img/facebook-f.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
-
 </body>
+
 </html>

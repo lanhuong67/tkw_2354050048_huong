@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/lanhuong67/tkw_2354050048_huong/issues"
   },
-  "homepage": "https://github.com/lanhuong67/tkw_2354050048_huong#readme"
+  "homepage": "https://github.com/lanhuong67/tkw_2354050048_huong#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
 }
