@@ -83,3 +83,9 @@ URL này sẽ được kiểm tra lại sau khi bật GitHub Pages.
 ## Sẽ làm lại nếu có thêm thời gian
 
 Dự án sử dụng HTML tĩnh nên Navbar và Footer phải được chép lại ở cả ba trang. Nếu phát triển bằng framework hoặc template engine, các phần này nên được tách thành component dùng chung để tránh lặp code.
+
+## Tương tác tự chọn Buổi 4
+
+Nút sao chép mã khuyến mãi giúp người dùng lấy mã `SKILLUP20` mà không cần ghi nhớ hoặc nhập lại.
+Sau khi sao chép, nút và vùng trạng thái xác nhận kết quả để người dùng biết thao tác đã thành công.
+Vùng thông báo dùng `role="status"` và `aria-live="polite"`, nên người dùng bàn phím và trình đọc màn hình đều nhận được phản hồi.

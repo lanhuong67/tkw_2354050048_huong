@@ -4,6 +4,7 @@ import { initTheme } from "./theme.js";
 import { initPricing } from "./pricing.js";
 import { initReveal } from "./reveal.js";
 import { initSlider } from "./slider.js";
+import { initCopyCode } from "./copy.js";
 
 initNav();
 initHeaderOnScroll();
@@ -13,3 +14,4 @@ initFaq();
 initPricing();
 initReveal();
 initSlider();
+initCopyCode();
