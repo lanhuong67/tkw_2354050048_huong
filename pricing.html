@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const saved = localStorage.getItem("theme");
+            const dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.classList.toggle("dark", dark);
+        })();
+    </script>
     <meta name="description"
         content="Khám phá các gói học tiếng Anh trực tuyến và so sánh tính năng của SkillUp English.">
     <title>Học phí - SkillUp English</title>
@@ -15,11 +22,12 @@
 </head>
 
 <body class="bg-surface font-body text-ink">
+    <div id="nav-sentinel" aria-hidden="true"></div>
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4">Bỏ qua đến nội
         dung chính</a>
 
     <!-- 1. Navbar -->
-    <header class="bg-surface">
+    <header id="site-header" class="sticky top-0 z-40 bg-surface transition-shadow">
         <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-5 py-6 xl:px-0"
             aria-label="Điều hướng chính">
             <a href="./index.html" class="flex shrink-0 items-center gap-3 font-display text-2xl font-bold text-ink">
@@ -35,6 +43,9 @@
                 <li><a class="font-medium hover:text-brand-600" href="./index.html#faq">Câu hỏi</a></li>
             </ul>
             <div class="flex items-center gap-4">
+                <button type="button" data-theme-toggle role="switch" aria-checked="false"
+                    class="grid h-10 w-10 place-items-center rounded-lg border border-line bg-surface text-xl text-ink"
+                    aria-label="Bật chế độ tối"><span aria-hidden="true">◐</span></button>
                 <a href="./index.html#features" class="hidden text-sm font-medium hover:text-brand-600 lg:block">
                     Khám phá
                 </a>
@@ -43,12 +54,21 @@
                     Bắt đầu học
                 </a>
 
-                <button type="button"
+                <button type="button" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false"
                     class="grid h-10 w-10 place-items-center rounded-lg border border-line bg-surface text-2xl text-ink lg:hidden"
                     aria-label="Mở menu">
                     <span aria-hidden="true">☰</span>
                 </button>
             </div>
+        </nav>
+        <nav id="mobile-menu" class="hidden border-t border-line px-5 py-4 lg:hidden" aria-label="Menu di động">
+            <ul class="flex flex-col gap-4">
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#features">Tính năng</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#stats">Thành tựu</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#testimonials">Đánh giá</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./pricing.html">Học phí</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#faq">Câu hỏi</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -69,6 +89,17 @@
                         Bắt đầu miễn phí và nâng cấp khi bạn cần thêm bài học,
                         luyện phát âm và lộ trình cá nhân hóa.
                     </p>
+
+                    <div class="mt-2 flex items-center justify-center gap-3">
+                        <span class="text-sm font-semibold">Theo tháng</span>
+                        <button id="pricing-toggle" type="button" role="switch" aria-checked="false"
+                            class="relative h-7 w-12 rounded-pill bg-line transition-colors aria-checked:bg-brand-600"
+                            aria-label="Hiển thị giá theo năm">
+                            <span class="absolute left-1 top-1 h-5 w-5 rounded-pill bg-white transition-transform"
+                                aria-hidden="true"></span>
+                        </button>
+                        <span class="text-sm font-semibold">Theo năm</span>
+                    </div>
                 </div>
 
                 <ul class="grid items-stretch gap-6 lg:grid-cols-3">
@@ -85,8 +116,9 @@
                         </div>
 
                         <p class="flex items-baseline justify-center gap-2">
-                            <span class="font-display text-4xl font-extrabold">0đ</span>
-                            <span class="text-muted">
+                            <span data-price data-monthly="0" data-yearly="0"
+                                class="font-display text-4xl font-extrabold">0đ</span>
+                            <span data-price-period class="text-muted">
                                 / tháng
                             </span>
                         </p>
@@ -120,9 +152,10 @@
                         </div>
 
                         <p class="flex items-baseline justify-center gap-2">
-                            <span class="font-display text-4xl font-extrabold">149.000đ</span>
+                            <span data-price data-monthly="149000" data-yearly="1430400"
+                                class="font-display text-4xl font-extrabold">149.000đ</span>
 
-                            <span class="text-muted">
+                            <span data-price-period class="text-muted">
                                 / tháng
                             </span>
                         </p>
@@ -153,9 +186,10 @@
                         </div>
 
                         <p class="flex items-baseline justify-center gap-2">
-                            <span class="font-display text-4xl font-extrabold">249.000đ</span>
+                            <span data-price data-monthly="249000" data-yearly="2390400"
+                                class="font-display text-4xl font-extrabold">249.000đ</span>
 
-                            <span class="text-muted">
+                            <span data-price-period class="text-muted">
                                 / tháng
                             </span>
                         </p>
@@ -177,7 +211,7 @@
         </section>
 
         <!-- 2. So sánh tính năng -->
-        <section class="bg-surface-soft py-16 lg:py-24" aria-labelledby="comparison-title">
+        <section data-reveal class="bg-surface-soft py-16 lg:py-24" aria-labelledby="comparison-title">
             <div class="mx-auto w-full max-w-7xl px-5 xl:px-0">
                 <div class="section-heading">
                     <p class="font-semibold text-brand-600">
@@ -338,15 +372,17 @@
                                     Học phí
                                 </th>
 
-                                <td class="px-5 py-4 font-semibold">
+                                <td data-price data-monthly="0" data-yearly="0" class="px-5 py-4 font-semibold">
                                     0đ
                                 </td>
 
-                                <td class="px-5 py-4 font-semibold text-brand-600">
+                                <td data-price data-monthly="149000" data-yearly="1430400"
+                                    class="px-5 py-4 font-semibold text-brand-600">
                                     149.000đ
                                 </td>
 
-                                <td class="px-5 py-4 font-semibold">
+                                <td data-price data-monthly="249000" data-yearly="2390400"
+                                    class="px-5 py-4 font-semibold">
                                     249.000đ
                                 </td>
                             </tr>
@@ -357,7 +393,7 @@
         </section>
 
         <!-- 3. Câu hỏi về thanh toán -->
-        <section class="bg-surface py-16 lg:py-24" aria-labelledby="payment-faq-title">
+        <section id="faq" data-reveal class="bg-surface py-16 lg:py-24" aria-labelledby="payment-faq-title">
             <div class="mx-auto grid w-full max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_1.4fr] xl:px-0">
                 <div class="flex flex-col gap-4">
                     <p class="font-semibold text-brand-600">
@@ -377,7 +413,7 @@
 
                 <div class="flex flex-col border-t border-line">
                     <details class="group border-b border-line py-5" open>
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                        <summary data-faq-trigger class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
                             Tôi có thể sử dụng miễn phí không?
 
                             <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
@@ -392,7 +428,7 @@
                     </details>
 
                     <details class="group border-b border-line py-5">
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                        <summary data-faq-trigger class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
                             Tôi có thể đổi gói học không?
 
                             <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
@@ -407,7 +443,7 @@
                     </details>
 
                     <details class="group border-b border-line py-5">
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                        <summary data-faq-trigger class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
                             SkillUp English hỗ trợ thanh toán như thế nào?
 
                             <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
@@ -422,7 +458,7 @@
                     </details>
 
                     <details class="group border-b border-line py-5">
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
+                        <summary data-faq-trigger class="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold">
                             Tôi cần hỗ trợ thì liên hệ ở đâu?
 
                             <span class="text-xl text-brand-600 group-open:rotate-180" aria-hidden="true">
@@ -543,6 +579,9 @@
             </div>
         </div>
     </footer>
+    <button id="to-top" type="button" class="btn btn-primary fixed bottom-5 right-5 z-30 hidden h-11 px-4 shadow-lg"
+        aria-label="Lên đầu trang">↑</button>
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

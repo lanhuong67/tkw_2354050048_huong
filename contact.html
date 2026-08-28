@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const saved = localStorage.getItem("theme");
+            const dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.classList.toggle("dark", dark);
+        })();
+    </script>
     <meta name="description"
         content="Liên hệ SkillUp English để được tư vấn lộ trình và lựa chọn gói học tiếng Anh trực tuyến.">
     <title>Liên hệ - SkillUp English</title>
@@ -16,11 +23,12 @@
 </head>
 
 <body class="bg-surface font-body text-ink">
+    <div id="nav-sentinel" aria-hidden="true"></div>
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4">Bỏ qua đến nội
         dung chính</a>
 
     <!-- 1. Navbar -->
-    <header class="bg-surface">
+    <header id="site-header" class="sticky top-0 z-40 bg-surface transition-shadow">
         <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-5 py-6 xl:px-0"
             aria-label="Điều hướng chính">
             <a href="./index.html" class="flex shrink-0 items-center gap-3 font-display text-2xl font-bold text-ink">
@@ -36,6 +44,9 @@
                 <li><a class="font-medium hover:text-brand-600" href="./index.html#faq">Câu hỏi</a></li>
             </ul>
             <div class="flex items-center gap-4">
+                <button type="button" data-theme-toggle role="switch" aria-checked="false"
+                    class="grid h-10 w-10 place-items-center rounded-lg border border-line bg-surface text-xl text-ink"
+                    aria-label="Bật chế độ tối"><span aria-hidden="true">◐</span></button>
                 <a href="./index.html#features" class="hidden text-sm font-medium hover:text-brand-600 lg:block">
                     Khám phá
                 </a>
@@ -44,12 +55,21 @@
                     Bắt đầu học
                 </a>
 
-                <button type="button"
+                <button type="button" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false"
                     class="grid h-10 w-10 place-items-center rounded-lg border border-line bg-surface text-2xl text-ink lg:hidden"
                     aria-label="Mở menu">
                     <span aria-hidden="true">☰</span>
                 </button>
             </div>
+        </nav>
+        <nav id="mobile-menu" class="hidden border-t border-line px-5 py-4 lg:hidden" aria-label="Menu di động">
+            <ul class="flex flex-col gap-4">
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#features">Tính năng</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#stats">Thành tựu</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#testimonials">Đánh giá</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./pricing.html">Học phí</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./index.html#faq">Câu hỏi</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -269,7 +289,7 @@
 
                     <!-- 3. Thông tin liên hệ -->
                     <aside class="flex flex-col gap-6" aria-labelledby="contact-info-title">
-                        <section class="card flex flex-col gap-5">
+                        <section data-reveal class="card flex flex-col gap-5">
                             <h2 id="contact-info-title" class="font-display text-2xl font-bold">
                                 Thông tin liên hệ
                             </h2>
@@ -318,7 +338,7 @@
                         </section>
 
                         <!-- 4. Quy trình sau khi gửi -->
-                        <section class="card flex flex-col gap-5" aria-labelledby="next-steps-title">
+                        <section data-reveal class="card flex flex-col gap-5" aria-labelledby="next-steps-title">
                             <h2 id="next-steps-title" class="font-display text-2xl font-bold">
                                 Sau khi gửi thì sao?
                             </h2>
@@ -458,6 +478,9 @@
             </div>
         </div>
     </footer>
+    <button id="to-top" type="button" class="btn btn-primary fixed bottom-5 right-5 z-30 hidden h-11 px-4 shadow-lg"
+        aria-label="Lên đầu trang">↑</button>
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
