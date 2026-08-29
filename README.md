@@ -14,6 +14,7 @@ Trang web giới thiệu phần mềm học tiếng Anh trực tuyến, được
 - `index.html`: trang giới thiệu chính
 - `pricing.html`: bảng giá, bảng so sánh tính năng và FAQ thanh toán
 - `contact.html`: form liên hệ, thông tin hỗ trợ và quy trình sau khi gửi
+- `records.html`: quản lý tiến độ học viên từ dữ liệu JSON
 
 ## Chức năng Buổi 3
 
@@ -80,9 +81,11 @@ URL này sẽ được kiểm tra lại sau khi bật GitHub Pages.
 
 Ảnh so sánh Figma và website sẽ được bổ sung sau khi hoàn thành bản rebrand trên Figma.
 
-## Sẽ làm lại nếu có thêm thời gian
+## 3 điều tôi sẽ làm lại nếu có thêm thời gian
 
-Dự án sử dụng HTML tĩnh nên Navbar và Footer phải được chép lại ở cả ba trang. Nếu phát triển bằng framework hoặc template engine, các phần này nên được tách thành component dùng chung để tránh lặp code.
+1. Tách Navbar và Footer thành component dùng chung để tránh lặp HTML giữa bốn trang.
+2. Thêm phân trang và kiểm thử tự động cho các hàm lọc, sắp xếp khi dữ liệu tăng lên hàng nghìn bản ghi.
+3. Đồng bộ dữ liệu với API có xác thực thay cho `localStorage`, để người học dùng được trên nhiều thiết bị.
 
 ## Tương tác tự chọn Buổi 4
 
@@ -110,8 +113,21 @@ Vùng thông báo dùng `role="status"` và `aria-live="polite"`, nên người 
 - `js/slider.js`: slider cảm nhận, tự chạy và quản lý slide ẩn.
 - `js/reveal.js`: hiệu ứng lộ dần khi phần tử đi vào màn hình.
 - `js/copy.js`: sao chép mã khuyến mãi và thông báo kết quả.
+- `js/records.js`: tải JSON, quản lý state, render, tìm kiếm, lọc, sắp xếp và lưu dữ liệu.
+- `js/contact-form.js`: kiểm tra form và hiển thị hướng dẫn sửa lỗi bằng tiếng Việt.
 
-Mỗi module tự kiểm tra phần tử mình phụ trách trước khi khởi tạo, vì vậy một file `main.js` được dùng chung an toàn cho cả ba trang.
+Mỗi module tự kiểm tra phần tử mình phụ trách trước khi khởi tạo, vì vậy một file `main.js` được dùng chung an toàn cho cả bốn trang.
+
+## Chức năng Buổi 5
+
+- Tải 30 bản ghi từ `data/records.json` bằng `fetch` và kiểm tra `response.ok`.
+- Render theo mô hình một chiều `state → render → DOM`.
+- Đủ bốn trạng thái loading, có dữ liệu, rỗng và lỗi.
+- Dựng dòng bằng `<template>` và `textContent`, không đưa dữ liệu người dùng vào `innerHTML`.
+- Tìm kiếm có debounce 300 ms; lọc khóa học, trạng thái và sắp xếp hoạt động đồng thời.
+- Thêm, xóa và ghi nhớ dữ liệu bằng `localStorage`.
+- Có nút khôi phục 30 bản ghi mẫu phục vụ kiểm thử và demo.
+- Form liên hệ báo lỗi tiếng Việt, gắn `aria-invalid` và đưa focus tới trường sai đầu tiên.
 
 ## Sử dụng bằng bàn phím
 
@@ -139,3 +155,11 @@ Build CSS để triển khai:
 ```bash
 npm run build
 ```
+
+Chạy bản production qua web server để `fetch` hoạt động:
+
+```bash
+npx serve .
+```
+
+Sau đó mở `http://localhost:3000/records.html`. Không mở trực tiếp bằng `file://` vì trình duyệt có thể chặn yêu cầu đọc JSON.
