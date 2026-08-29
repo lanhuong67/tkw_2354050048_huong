@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (() => {
+      const saved = localStorage.getItem("theme");
+      const dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.classList.toggle("dark", dark);
+    })();
+  </script>
+  <meta name="description" content="Danh sách tiến độ học viên SkillUp English.">
+  <title>Danh sách học viên - SkillUp English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body class="bg-surface font-body text-ink">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4">Bỏ qua đến nội dung chính</a>
+
+  <header class="border-b border-line bg-surface">
+    <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 xl:px-0" aria-label="Điều hướng chính">
+      <a href="./index.html" class="flex items-center gap-3 font-display text-xl font-bold">
+        <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-sm text-white" aria-hidden="true">S</span>
+        SkillUp English
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="./index.html" class="font-medium hover:text-brand-600">Trang chủ</a>
+        <a href="./pricing.html" class="hidden font-medium hover:text-brand-600 sm:block">Học phí</a>
+        <a href="./contact.html" class="hidden font-medium hover:text-brand-600 md:block">Liên hệ</a>
+        <span class="hidden font-medium text-brand-600 lg:block" aria-current="page">Học viên</span>
+        <button type="button" data-theme-toggle role="switch" aria-checked="false" class="grid h-10 w-10 place-items-center rounded-lg border border-line" aria-label="Bật chế độ tối"><span aria-hidden="true">◐</span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" data-records-app class="mx-auto w-full max-w-7xl px-5 py-12 xl:px-0">
+    <header class="mb-8">
+      <p class="mb-2 font-semibold text-brand-600">Dữ liệu động · Buổi 5</p>
+      <h1 class="font-display text-3xl font-extrabold sm:text-4xl">Tiến độ học viên</h1>
+      <p data-record-count class="mt-3 text-muted" aria-live="polite">Đang tải dữ liệu…</p>
+    </header>
+
+    <section class="mb-8 grid gap-4 rounded-card border border-line bg-surface-soft p-5 md:grid-cols-2 lg:grid-cols-4" aria-label="Bộ lọc dữ liệu">
+      <div>
+        <label class="field-label" for="record-query">Tìm học viên hoặc mã</label>
+        <input id="record-query" data-query class="field-input" type="search" placeholder="Ví dụ: Minh Anh">
+      </div>
+      <div>
+        <label class="field-label" for="record-category">Khóa học</label>
+        <select id="record-category" data-category class="field-input">
+          <option value="all">Tất cả khóa học</option>
+          <option value="Giao tiếp">Giao tiếp</option>
+          <option value="IELTS">IELTS</option>
+          <option value="TOEIC">TOEIC</option>
+          <option value="Phát âm">Phát âm</option>
+        </select>
+      </div>
+      <div>
+        <label class="field-label" for="record-status">Trạng thái</label>
+        <select id="record-status" data-status class="field-input">
+          <option value="all">Tất cả trạng thái</option>
+          <option value="moi-dang-ky">Mới đăng ký</option>
+          <option value="dang-hoc">Đang học</option>
+          <option value="da-hoan-thanh">Đã hoàn thành</option>
+        </select>
+      </div>
+      <div>
+        <label class="field-label" for="record-sort">Sắp xếp</label>
+        <select id="record-sort" data-sort class="field-input">
+          <option value="date-desc">Mới nhất</option>
+          <option value="date-asc">Cũ nhất</option>
+          <option value="amount-desc">Học phí cao nhất</option>
+          <option value="amount-asc">Học phí thấp nhất</option>
+          <option value="name-asc">Tên A-Z</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="mb-8 rounded-card border border-line p-5" aria-labelledby="add-record-title">
+      <h2 id="add-record-title" class="mb-4 font-display text-xl font-bold">Thêm học viên</h2>
+      <form data-add-form class="grid items-end gap-4 sm:grid-cols-2 lg:grid-cols-6">
+        <div class="lg:col-span-2">
+          <label class="field-label" for="new-trader">Họ và tên</label>
+          <input id="new-trader" name="trader" class="field-input" required minlength="2">
+        </div>
+        <div>
+          <label class="field-label" for="new-category">Khóa học</label>
+          <select id="new-category" name="category" class="field-input" required>
+            <option value="Giao tiếp">Giao tiếp</option><option value="IELTS">IELTS</option>
+            <option value="TOEIC">TOEIC</option><option value="Phát âm">Phát âm</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" for="new-status">Trạng thái</label>
+          <select id="new-status" name="status" class="field-input" required>
+            <option value="moi-dang-ky">Mới đăng ký</option>
+            <option value="dang-hoc">Đang học</option>
+            <option value="da-hoan-thanh">Đã hoàn thành</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" for="new-weight">Số bài</label>
+          <input id="new-weight" name="weight" class="field-input" type="number" min="0" max="999" value="0" required>
+        </div>
+        <div>
+          <label class="field-label" for="new-amount">Học phí (đ)</label>
+          <input id="new-amount" name="amount" class="field-input" type="number" min="0" step="1000" value="599000" required>
+        </div>
+        <button class="btn btn-primary sm:col-span-2 lg:col-span-1" type="submit">Thêm học viên</button>
+      </form>
+      <p data-toast class="mt-3 min-h-6 text-sm font-medium text-brand-600" role="status" aria-live="polite"></p>
+    </section>
+
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+      <span aria-hidden="true"></span>
+      <button data-restore class="btn btn-secondary" type="button">Khôi phục dữ liệu mẫu</button>
+    </div>
+
+    <section data-state="loading" aria-label="Đang tải dữ liệu" aria-live="polite">
+      <span class="sr-only">Đang tải dữ liệu…</span>
+      <div class="space-y-3" aria-hidden="true">
+        <div class="skeleton h-14"></div>
+        <div class="skeleton h-14"></div>
+        <div class="skeleton h-14"></div>
+      </div>
+    </section>
+
+    <section data-state="error" class="rounded-card border border-action-500 bg-action-50 p-8 text-center" hidden>
+      <h2 class="font-display text-xl font-bold">Không thể tải danh sách</h2>
+      <p data-error-message class="mt-2 text-action-500" role="alert"></p>
+      <p class="mt-2 text-sm text-muted">Hãy chạy trang bằng Live Server hoặc <code>npx serve .</code>.</p>
+    </section>
+
+    <section data-state="empty" class="rounded-card border border-line p-10 text-center" hidden>
+      <h2 class="font-display text-xl font-bold">Không tìm thấy học viên</h2>
+      <p class="mt-2 text-muted">Hãy đổi từ khóa hoặc bộ lọc để xem kết quả khác.</p>
+    </section>
+
+    <div data-state="table" class="overflow-x-auto rounded-card border border-line" hidden>
+      <table class="w-full min-w-[900px] border-collapse text-left">
+        <caption class="sr-only">Danh sách tiến độ học viên</caption>
+        <thead class="bg-surface-soft text-sm">
+          <tr>
+            <th class="p-4" scope="col">Mã</th>
+            <th class="p-4" scope="col">Học viên</th>
+            <th class="p-4" scope="col">Khóa học</th>
+            <th class="p-4" scope="col">Trạng thái</th>
+            <th class="p-4" scope="col">Tiến độ</th>
+            <th class="p-4" scope="col">Học phí</th>
+            <th class="p-4" scope="col">Ngày đăng ký</th>
+            <th class="p-4" scope="col">Thao tác</th>
+          </tr>
+        </thead>
+        <tbody data-records-body class="divide-y divide-line"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <template id="record-row-template">
+    <tr class="hover:bg-surface-soft">
+      <td data-cell="id" class="whitespace-nowrap p-4 font-mono text-sm"></td>
+      <td data-cell="trader" class="p-4 font-semibold"></td>
+      <td data-cell="category" class="p-4"></td>
+      <td data-cell="status" class="p-4"></td>
+      <td data-cell="weight" class="p-4"></td>
+      <td data-cell="amount" class="whitespace-nowrap p-4"></td>
+      <td data-cell="date" class="whitespace-nowrap p-4"></td>
+      <td class="p-4"><button data-remove class="rounded-lg px-3 py-2 text-sm font-semibold text-action-500 hover:bg-action-50" type="button">Xóa</button></td>
+    </tr>
+  </template>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

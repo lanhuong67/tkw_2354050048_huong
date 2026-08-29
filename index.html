@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const saved = localStorage.getItem("theme");
+            const dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.classList.toggle("dark", dark);
+        })();
+    </script>
     <meta name="description" content="SkillUp English - phần mềm học tiếng Anh trực tuyến với lộ trình cá nhân hóa.">
     <title>SkillUp English - Học tiếng Anh trực tuyến</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +22,12 @@
 </head>
 
 <body class="bg-surface font-body text-ink">
+    <div id="nav-sentinel" aria-hidden="true"></div>
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4">Bỏ qua đến nội
         dung chính</a>
 
     <!-- 1. Navbar -->
-    <header class="bg-surface">
+    <header id="site-header" class="sticky top-0 z-40 bg-surface transition-shadow">
         <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-5 py-6 xl:px-0"
             aria-label="Điều hướng chính">
             <a href="#main" class="flex shrink-0 items-center gap-3 font-display text-2xl font-bold text-ink">
@@ -34,7 +42,11 @@
                 <li><a class="font-medium hover:text-brand-600" href="./pricing.html">Học phí</a></li>
                 <li><a class="font-medium hover:text-brand-600" href="#faq">Câu hỏi</a></li>
             </ul>
+            <a class="hidden font-medium text-brand-600 hover:text-brand-700 xl:block" href="./records.html">Học viên</a>
             <div class="flex items-center gap-4">
+                <button type="button" data-theme-toggle role="switch" aria-checked="false"
+                    class="grid h-10 w-10 place-items-center rounded-lg border border-line bg-surface text-xl text-ink"
+                    aria-label="Bật chế độ tối"><span aria-hidden="true">◐</span></button>
                 <a href="#features" class="hidden text-sm font-medium hover:text-brand-600 lg:block">
                     Khám phá
                 </a>
@@ -43,13 +55,23 @@
                     Bắt đầu học
                 </a>
 
-                <button type="button"
+                <button type="button" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false"
                     class="grid h-10 w-10 place-items-center rounded-lg border border-line bg-surface text-2xl text-ink lg:hidden"
                     aria-label="Mở menu">
-                    <class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs font-bold
+                    <span class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs font-bold
                         text-white" aria-hidden="true">☰</span>
                 </button>
             </div>
+        </nav>
+        <nav id="mobile-menu" class="hidden border-t border-line px-5 py-4 lg:hidden" aria-label="Menu di động">
+            <ul class="flex flex-col gap-4">
+                <li><a class="font-medium text-brand-600" href="./records.html">Quản lý học viên</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="#features">Tính năng</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="#stats">Thành tựu</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="#testimonials">Đánh giá</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="./pricing.html">Học phí</a></li>
+                <li><a class="font-medium hover:text-brand-600" href="#faq">Câu hỏi</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -76,7 +98,6 @@
                 <img class="h-auto w-full max-w-[532px] object-contain lg:h-[416px] lg:w-[532px] lg:max-w-none"
                     src="./assets/img/skillup-hero.svg"
                     alt="Lớp học tiếng Anh trực tuyến với giáo viên, sách, tai nghe và micro" width="532" height="416">
-                </img>
             </div>
         </section>
 
@@ -124,7 +145,7 @@
         </section>
 
         <!-- 4. Tính năng -->
-        <section id="features" class="bg-surface-soft py-24" aria-labelledby="features-title">
+        <section id="features" data-reveal class="bg-surface-soft py-24" aria-labelledby="features-title">
             <div class="mx-auto flex w-full max-w-7xl flex-col gap-20 px-5 xl:px-0">
                 <div class="grid items-center gap-16 lg:grid-cols-2">
                     <div class="flex flex-col items-start gap-8">
@@ -142,15 +163,15 @@
                         <div class="flex flex-col gap-6">
                             <ul class="flex flex-col gap-4 font-medium">
                                 <li class="flex items-center gap-2">
-                                    <class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
+                                    <span class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
                                         font-bold text-white" aria-hidden="true">✓</span>Lộ trình phù hợp với trình độ
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
+                                    <span class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
                                         font-bold text-white" aria-hidden="true">✓</span>Luyện nghe và phát âm mỗi ngày
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
+                                    <span class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
                                         font-bold text-white" aria-hidden="true">✓</span>Theo dõi kết quả học tập
                                 </li>
                             </ul>
@@ -226,23 +247,23 @@
                         <div class="h-px w-full bg-line" aria-hidden="true"></div>
                         <ul class="flex flex-col gap-4 font-medium">
                             <li class="flex items-center gap-2">
-                                <class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
+                                <span class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
                                     font-bold text-white" aria-hidden="true">✓</span>Nghe và nhận biết ý chính
                             </li>
                             <li class="flex items-center gap-2">
-                                <class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
+                                <span class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
                                     font-bold text-white" aria-hidden="true">✓</span>Nói và luyện phát âm
                             </li>
                             <li class="flex items-center gap-2">
-                                <class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
+                                <span class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
                                     font-bold text-white" aria-hidden="true">✓</span>Đọc theo chủ đề thực tế
                             </li>
                             <li class="flex items-center gap-2">
-                                <class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
+                                <span class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
                                     font-bold text-white" aria-hidden="true">✓</span>Viết câu và đoạn văn ngắn
                             </li>
                             <li class="flex items-center gap-2">
-                                <class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
+                                <span class="grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-brand-600 text-xs
                                     font-bold text-white" aria-hidden="true">✓</span>Ôn tập theo tiến độ cá nhân
                             </li>
                         </ul>
@@ -252,7 +273,7 @@
         </section>
 
         <!-- 5. Số liệu -->
-        <section id="stats" class="bg-surface py-24" aria-labelledby="stats-title">
+        <section id="stats" data-reveal class="bg-surface py-24" aria-labelledby="stats-title">
             <div class="mx-auto grid w-full max-w-7xl items-center gap-16 px-5 lg:grid-cols-2 xl:px-0">
                 <div class="flex flex-col items-start gap-6">
                     <div class="flex flex-col gap-4">
@@ -293,27 +314,65 @@
         </section>
 
         <!-- 6. Cảm nhận -->
-        <section id="testimonials" class="bg-surface-soft py-24" aria-labelledby="testimonials-title">
-            <div class="mx-auto w-full max-w-3xl px-5 text-center">
+        <section id="testimonials" data-reveal class="bg-surface-soft py-24" aria-labelledby="testimonials-title">
+            <div data-slider class="mx-auto w-full max-w-3xl px-5 text-center">
                 <h2 id="testimonials-title" class="sr-only">Cảm nhận của người học</h2>
-                <figure class="flex flex-col items-center gap-6">
-                    <span class="font-display text-5xl leading-none text-brand-600" aria-hidden="true">“</span>
-                    <blockquote class="font-display text-2xl font-semibold leading-9 text-ink">
-                        Lộ trình rõ ràng giúp tôi biết mỗi ngày nên học gì và cần luyện thêm kỹ năng nào.
-                    </blockquote>
-                    <figcaption class="flex flex-wrap items-center justify-center gap-3">
-                        <span class="grid h-10 w-10 place-items-center rounded-pill bg-brand-600 font-bold text-white"
-                            aria-hidden="true">MA</span>
-                        <span class="font-semibold">Minh Anh</span>
-                        <span class="text-line" aria-hidden="true">|</span>
-                        <cite class="not-italic text-muted">Sinh viên, TP.HCM</cite>
-                    </figcaption>
-                </figure>
+                <div class="overflow-hidden">
+                    <div data-slider-track class="flex transition-transform duration-500">
+                        <figure data-slide class="flex w-full shrink-0 flex-col items-center gap-6 px-2">
+                            <span class="font-display text-5xl leading-none text-brand-600" aria-hidden="true">“</span>
+                            <blockquote class="font-display text-2xl font-semibold leading-9 text-ink">
+                                Lộ trình rõ ràng giúp tôi biết mỗi ngày nên học gì và cần luyện thêm kỹ năng nào.
+                            </blockquote>
+                            <figcaption class="flex flex-wrap items-center justify-center gap-3">
+                                <span class="grid h-10 w-10 place-items-center rounded-pill bg-brand-600 font-bold text-white"
+                                    aria-hidden="true">MA</span>
+                                <span class="font-semibold">Minh Anh</span>
+                                <span class="text-line" aria-hidden="true">|</span>
+                                <cite class="not-italic text-muted">Sinh viên, TP.HCM</cite>
+                            </figcaption>
+                        </figure>
+                        <figure data-slide class="flex w-full shrink-0 flex-col items-center gap-6 px-2" inert>
+                            <span class="font-display text-5xl leading-none text-brand-600" aria-hidden="true">“</span>
+                            <blockquote class="font-display text-2xl font-semibold leading-9 text-ink">
+                                Bài luyện ngắn giúp tôi duy trì thói quen học đều đặn dù lịch làm việc khá bận.
+                            </blockquote>
+                            <figcaption class="flex flex-wrap items-center justify-center gap-3">
+                                <span class="grid h-10 w-10 place-items-center rounded-pill bg-brand-600 font-bold text-white"
+                                    aria-hidden="true">TH</span>
+                                <span class="font-semibold">Tuấn Huy</span>
+                                <span class="text-line" aria-hidden="true">|</span>
+                                <cite class="not-italic text-muted">Nhân viên văn phòng, Hà Nội</cite>
+                            </figcaption>
+                        </figure>
+                        <figure data-slide class="flex w-full shrink-0 flex-col items-center gap-6 px-2" inert>
+                            <span class="font-display text-5xl leading-none text-brand-600" aria-hidden="true">“</span>
+                            <blockquote class="font-display text-2xl font-semibold leading-9 text-ink">
+                                Báo cáo tiến độ giúp tôi nhận ra phần phát âm còn yếu và tập trung cải thiện đúng chỗ.
+                            </blockquote>
+                            <figcaption class="flex flex-wrap items-center justify-center gap-3">
+                                <span class="grid h-10 w-10 place-items-center rounded-pill bg-brand-600 font-bold text-white"
+                                    aria-hidden="true">NL</span>
+                                <span class="font-semibold">Ngọc Lan</span>
+                                <span class="text-line" aria-hidden="true">|</span>
+                                <cite class="not-italic text-muted">Học viên, Đà Nẵng</cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="mt-8 flex items-center justify-center gap-4">
+                    <button type="button" data-slider-prev class="btn btn-secondary h-10 px-4"
+                        aria-label="Cảm nhận trước">←</button>
+                    <div data-slider-dots class="flex items-center gap-2" aria-label="Chọn cảm nhận"></div>
+                    <button type="button" data-slider-next class="btn btn-secondary h-10 px-4"
+                        aria-label="Cảm nhận tiếp theo">→</button>
+                </div>
+                <p data-slider-status class="sr-only" aria-live="polite"></p>
             </div>
         </section>
 
         <!-- 7. Bảng giá -->
-        <section id="pricing" class="bg-surface py-24" aria-labelledby="pricing-title">
+        <section id="pricing" data-reveal class="bg-surface py-24" aria-labelledby="pricing-title">
             <div class="mx-auto flex w-full max-w-7xl flex-col gap-16 px-5 xl:px-0">
                 <div class="section-heading">
                     <h2 id="pricing-title" class="title-section">Chọn gói học phù hợp</h2>
@@ -377,7 +436,7 @@
         </section>
 
         <!-- 8. FAQ -->
-        <section id="faq" class="bg-surface py-24" aria-labelledby="faq-title">
+        <section id="faq" data-reveal class="bg-surface py-24" aria-labelledby="faq-title">
             <div class="mx-auto grid w-full max-w-7xl gap-12
                px-5 lg:grid-cols-[1fr_1.4fr] xl:px-0">
                 <div class="flex flex-col gap-4">
@@ -398,7 +457,7 @@
 
                 <div class="flex flex-col border-t border-line">
                     <details class="group border-b border-line py-5" open>
-                        <summary class="flex cursor-pointer list-none
+                        <summary data-faq-trigger class="flex cursor-pointer list-none
                            items-center justify-between gap-6
                            font-semibold">
                             SkillUp English phù hợp với ai?
@@ -417,7 +476,7 @@
                     </details>
 
                     <details class="group border-b border-line py-5">
-                        <summary class="flex cursor-pointer list-none
+                        <summary data-faq-trigger class="flex cursor-pointer list-none
                            items-center justify-between gap-6
                            font-semibold">
                             Tôi có thể học trên điện thoại không?
@@ -435,7 +494,7 @@
                     </details>
 
                     <details class="group border-b border-line py-5">
-                        <summary class="flex cursor-pointer list-none
+                        <summary data-faq-trigger class="flex cursor-pointer list-none
                            items-center justify-between gap-6
                            font-semibold">
                             Tôi nên bắt đầu học từ đâu?
@@ -453,7 +512,7 @@
                     </details>
 
                     <details class="group border-b border-line py-5">
-                        <summary class="flex cursor-pointer list-none
+                        <summary data-faq-trigger class="flex cursor-pointer list-none
                            items-center justify-between gap-6
                            font-semibold">
                             Tôi có thể thay đổi gói học không?
@@ -474,7 +533,7 @@
         </section>
 
         <!-- 9. CTA -->
-        <section id="cta" class="bg-surface-soft py-24" aria-labelledby="cta-title">
+        <section id="cta" data-reveal class="bg-surface-soft py-24" aria-labelledby="cta-title">
             <div class="mx-auto flex w-full max-w-2xl
                flex-col items-center gap-6 px-5 text-center">
                 <h2 id="cta-title" class="font-display text-3xl font-extrabold
@@ -490,6 +549,18 @@
                 <a href="#pricing" class="btn btn-primary">
                     Bắt đầu học miễn phí
                 </a>
+
+                <div class="flex flex-col items-center gap-3 rounded-card border border-line bg-surface p-4">
+                    <p class="text-sm text-muted">Sao chép mã để dùng khi đăng ký gói học:</p>
+                    <div class="flex flex-wrap items-center justify-center gap-3">
+                        <code class="rounded-lg bg-surface-soft px-4 py-2 font-bold text-brand-600">SKILLUP20</code>
+                        <button type="button" data-copy-code="SKILLUP20" class="btn btn-secondary h-10 px-4">
+                            Sao chép mã
+                        </button>
+                    </div>
+                    <p data-copy-status class="min-h-5 text-sm font-medium text-brand-600" role="status"
+                        aria-live="polite"></p>
+                </div>
             </div>
         </section>
     </main>
@@ -576,24 +647,27 @@
 
                 <div class="flex items-center gap-5" aria-label="Mạng xã hội">
                     <a href="#" aria-label="GitHub" class="text-muted hover:opacity-70">
-                        <img src="./assets/img/github.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                        <img src="./assets/img/github.png" alt="" width="24" height="24" loading="lazy" class="h-6 w-6 object-contain" aria-hidden="true">
                     </a>
 
                     <a href="#" aria-label="Twitter" class="text-muted hover:opacity-70">
-                        <img src="./assets/img/twitter.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                        <img src="./assets/img/twitter.png" alt="" width="24" height="24" loading="lazy" class="h-6 w-6 object-contain" aria-hidden="true">
                     </a>
 
                     <a href="#" aria-label="Dribbble" class="text-muted hover:opacity-70">
-                        <img src="./assets/img/dribbble.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                        <img src="./assets/img/dribbble.png" alt="" width="24" height="24" loading="lazy" class="h-6 w-6 object-contain" aria-hidden="true">
                     </a>
 
                     <a href="#" aria-label="Facebook" class="text-muted hover:opacity-70">
-                        <img src="./assets/img/facebook-f.png" alt="" class="h-6 w-6 object-contain" aria-hidden="true">
+                        <img src="./assets/img/facebook-f.png" alt="" width="24" height="24" loading="lazy" class="h-6 w-6 object-contain" aria-hidden="true">
                     </a>
                 </div>
             </div>
         </div>
     </footer>
+    <button id="to-top" type="button" class="btn btn-primary fixed bottom-5 right-5 z-30 hidden h-11 px-4 shadow-lg"
+        aria-label="Lên đầu trang">↑</button>
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

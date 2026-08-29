@@ -14,6 +14,7 @@ Trang web giới thiệu phần mềm học tiếng Anh trực tuyến, được
 - `index.html`: trang giới thiệu chính
 - `pricing.html`: bảng giá, bảng so sánh tính năng và FAQ thanh toán
 - `contact.html`: form liên hệ, thông tin hỗ trợ và quy trình sau khi gửi
+- `records.html`: quản lý tiến độ học viên từ dữ liệu JSON
 
 ## Chức năng Buổi 3
 
@@ -80,6 +81,85 @@ URL này sẽ được kiểm tra lại sau khi bật GitHub Pages.
 
 Ảnh so sánh Figma và website sẽ được bổ sung sau khi hoàn thành bản rebrand trên Figma.
 
-## Sẽ làm lại nếu có thêm thời gian
+## 3 điều tôi sẽ làm lại nếu có thêm thời gian
 
-Dự án sử dụng HTML tĩnh nên Navbar và Footer phải được chép lại ở cả ba trang. Nếu phát triển bằng framework hoặc template engine, các phần này nên được tách thành component dùng chung để tránh lặp code.
+1. Tách Navbar và Footer thành component dùng chung để tránh lặp HTML giữa bốn trang.
+2. Thêm phân trang và kiểm thử tự động cho các hàm lọc, sắp xếp khi dữ liệu tăng lên hàng nghìn bản ghi.
+3. Đồng bộ dữ liệu với API có xác thực thay cho `localStorage`, để người học dùng được trên nhiều thiết bị.
+
+## Tương tác tự chọn Buổi 4
+
+Nút sao chép mã khuyến mãi giúp người dùng lấy mã `SKILLUP20` mà không cần ghi nhớ hoặc nhập lại.
+Sau khi sao chép, nút và vùng trạng thái xác nhận kết quả để người dùng biết thao tác đã thành công.
+Vùng thông báo dùng `role="status"` và `aria-live="polite"`, nên người dùng bàn phím và trình đọc màn hình đều nhận được phản hồi.
+
+## Chức năng Buổi 4
+
+- Menu mobile cập nhật `aria-expanded`, đóng bằng phím `Escape`, bấm bên ngoài hoặc chuyển sang màn hình desktop.
+- Navbar thêm bóng khi cuộn bằng `IntersectionObserver` và có nút lên đầu trang sau 400px.
+- Accordion FAQ dùng event delegation và mỗi lúc chỉ mở một câu hỏi.
+- Dark mode ghi nhớ bằng `localStorage`, mặc định theo `prefers-color-scheme`.
+- Công tắc giá tháng/năm dùng `role="switch"`, `aria-checked` và `Intl.NumberFormat("vi-VN")`.
+- Slider cảm nhận tự viết, có `inert` cho slide ẩn và chấm chỉ dẫn sinh bằng JavaScript.
+- Hiệu ứng lộ dần dùng `IntersectionObserver` và tôn trọng `prefers-reduced-motion`.
+
+## Kiến trúc JavaScript
+
+- `js/main.js`: điểm khởi động duy nhất, chỉ import và gọi các hàm `init`.
+- `js/nav.js`: menu mobile, trạng thái navbar và nút lên đầu trang.
+- `js/theme.js`: công tắc dark mode và lưu lựa chọn của người dùng.
+- `js/faq.js`: accordion FAQ và điều hướng giữa câu hỏi.
+- `js/pricing.js`: công tắc giá tháng/năm và định dạng tiền Việt Nam.
+- `js/slider.js`: slider cảm nhận, tự chạy và quản lý slide ẩn.
+- `js/reveal.js`: hiệu ứng lộ dần khi phần tử đi vào màn hình.
+- `js/copy.js`: sao chép mã khuyến mãi và thông báo kết quả.
+- `js/records.js`: tải JSON, quản lý state, render, tìm kiếm, lọc, sắp xếp và lưu dữ liệu.
+- `js/contact-form.js`: kiểm tra form và hiển thị hướng dẫn sửa lỗi bằng tiếng Việt.
+
+Mỗi module tự kiểm tra phần tử mình phụ trách trước khi khởi tạo, vì vậy một file `main.js` được dùng chung an toàn cho cả bốn trang.
+
+## Chức năng Buổi 5
+
+- Tải 30 bản ghi từ `data/records.json` bằng `fetch` và kiểm tra `response.ok`.
+- Render theo mô hình một chiều `state → render → DOM`.
+- Đủ bốn trạng thái loading, có dữ liệu, rỗng và lỗi.
+- Dựng dòng bằng `<template>` và `textContent`, không đưa dữ liệu người dùng vào `innerHTML`.
+- Tìm kiếm có debounce 300 ms; lọc khóa học, trạng thái và sắp xếp hoạt động đồng thời.
+- Thêm, xóa và ghi nhớ dữ liệu bằng `localStorage`.
+- Có nút khôi phục 30 bản ghi mẫu phục vụ kiểm thử và demo.
+- Form liên hệ báo lỗi tiếng Việt, gắn `aria-invalid` và đưa focus tới trường sai đầu tiên.
+
+## Sử dụng bằng bàn phím
+
+- Nhấn `Tab` để di chuyển tới các liên kết, công tắc và nút điều khiển.
+- Nhấn `Escape` để đóng menu mobile và đưa focus về nút mở menu.
+- Trong FAQ, dùng `Arrow Up`, `Arrow Down`, `Home` và `End` để chuyển giữa các câu hỏi.
+- Trong slider, dùng `Arrow Left`, `Arrow Right`, `Home` và `End` để chuyển cảm nhận.
+- Slide không hiển thị được đặt `inert`, nên phím `Tab` không đi vào nội dung đang ẩn.
+
+## Chống nháy trắng khi tải dark mode
+
+Script xác định giao diện sáng/tối được đặt inline trong `<head>` để chạy trước lần trình duyệt vẽ trang đầu tiên.
+Lựa chọn đã lưu trong `localStorage` được ưu tiên hơn cài đặt `prefers-color-scheme` của hệ điều hành.
+Đây là ngoại lệ duy nhất của quy tắc không viết JavaScript trực tiếp trong HTML; các tương tác còn lại đều nằm trong module.
+
+## Chạy dự án
+
+```bash
+npm install
+npm run dev
+```
+
+Build CSS để triển khai:
+
+```bash
+npm run build
+```
+
+Chạy bản production qua web server để `fetch` hoạt động:
+
+```bash
+npx serve .
+```
+
+Sau đó mở `http://localhost:3000/records.html`. Không mở trực tiếp bằng `file://` vì trình duyệt có thể chặn yêu cầu đọc JSON.
