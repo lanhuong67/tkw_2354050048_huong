@@ -40,6 +40,42 @@
       <p data-record-count class="mt-3 text-muted" aria-live="polite">Đang tải dữ liệu…</p>
     </header>
 
+    <section class="mb-8 grid gap-4 rounded-card border border-line bg-surface-soft p-5 md:grid-cols-2 lg:grid-cols-4" aria-label="Bộ lọc dữ liệu">
+      <div>
+        <label class="field-label" for="record-query">Tìm học viên hoặc mã</label>
+        <input id="record-query" data-query class="field-input" type="search" placeholder="Ví dụ: Minh Anh">
+      </div>
+      <div>
+        <label class="field-label" for="record-category">Khóa học</label>
+        <select id="record-category" data-category class="field-input">
+          <option value="all">Tất cả khóa học</option>
+          <option value="Giao tiếp">Giao tiếp</option>
+          <option value="IELTS">IELTS</option>
+          <option value="TOEIC">TOEIC</option>
+          <option value="Phát âm">Phát âm</option>
+        </select>
+      </div>
+      <div>
+        <label class="field-label" for="record-status">Trạng thái</label>
+        <select id="record-status" data-status class="field-input">
+          <option value="all">Tất cả trạng thái</option>
+          <option value="moi-dang-ky">Mới đăng ký</option>
+          <option value="dang-hoc">Đang học</option>
+          <option value="da-hoan-thanh">Đã hoàn thành</option>
+        </select>
+      </div>
+      <div>
+        <label class="field-label" for="record-sort">Sắp xếp</label>
+        <select id="record-sort" data-sort class="field-input">
+          <option value="date-desc">Mới nhất</option>
+          <option value="date-asc">Cũ nhất</option>
+          <option value="amount-desc">Học phí cao nhất</option>
+          <option value="amount-asc">Học phí thấp nhất</option>
+          <option value="name-asc">Tên A-Z</option>
+        </select>
+      </div>
+    </section>
+
     <section data-state="loading" aria-label="Đang tải dữ liệu" aria-live="polite">
       <span class="sr-only">Đang tải dữ liệu…</span>
       <div class="space-y-3" aria-hidden="true">
@@ -56,8 +92,8 @@
     </section>
 
     <section data-state="empty" class="rounded-card border border-line p-10 text-center" hidden>
-      <h2 class="font-display text-xl font-bold">Chưa có học viên</h2>
-      <p class="mt-2 text-muted">Danh sách hiện chưa có bản ghi nào.</p>
+      <h2 class="font-display text-xl font-bold">Không tìm thấy học viên</h2>
+      <p class="mt-2 text-muted">Hãy đổi từ khóa hoặc bộ lọc để xem kết quả khác.</p>
     </section>
 
     <div data-state="table" class="overflow-x-auto rounded-card border border-line" hidden>

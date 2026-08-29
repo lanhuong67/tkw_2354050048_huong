@@ -1,7 +1,19 @@
 const state = {
   records: [],
+  query: "",
+  category: "all",
+  status: "all",
+  sort: "date-desc",
   loading: true,
   error: null,
+};
+
+const sorters = {
+  "date-desc": (a, b) => b.date.localeCompare(a.date),
+  "date-asc": (a, b) => a.date.localeCompare(b.date),
+  "amount-desc": (a, b) => b.amount - a.amount,
+  "amount-asc": (a, b) => a.amount - b.amount,
+  "name-asc": (a, b) => a.trader.localeCompare(b.trader, "vi"),
 };
 
 const moneyFormatter = new Intl.NumberFormat("vi-VN", {
@@ -17,6 +29,28 @@ const statusLabels = {
   "dang-hoc": "Đang học",
   "da-hoan-thanh": "Đã hoàn thành",
 };
+
+function debounce(fn, delay = 300) {
+  let timeoutId;
+  return (...args) => {
+    window.clearTimeout(timeoutId);
+    timeoutId = window.setTimeout(() => fn(...args), delay);
+  };
+}
+
+function visibleRecords() {
+  const query = state.query.trim().toLocaleLowerCase("vi");
+  return state.records
+    .filter((record) => state.category === "all" || record.category === state.category)
+    .filter((record) => state.status === "all" || record.status === state.status)
+    .filter((record) => {
+      if (!query) return true;
+      return record.trader.toLocaleLowerCase("vi").includes(query)
+        || record.id.toLocaleLowerCase("vi").includes(query);
+    })
+    .slice()
+    .sort(sorters[state.sort]);
+}
 
 async function loadRecords() {
   const response = await fetch("./data/records.json");
@@ -52,14 +86,35 @@ export function initRecords() {
   const errorMessage = root.querySelector("[data-error-message]");
 
   function render() {
+    const records = state.loading || state.error ? [] : visibleRecords();
     loading.hidden = !state.loading;
     error.hidden = !state.error;
-    empty.hidden = state.loading || Boolean(state.error) || state.records.length > 0;
-    table.hidden = state.loading || Boolean(state.error) || state.records.length === 0;
+    empty.hidden = state.loading || Boolean(state.error) || records.length > 0;
+    table.hidden = state.loading || Boolean(state.error) || records.length === 0;
     errorMessage.textContent = state.error ?? "";
-    count.textContent = state.loading ? "Đang tải dữ liệu…" : `${state.records.length} học viên`;
-    tbody.replaceChildren(...state.records.map((record) => buildRow(record, template)));
+    count.textContent = state.loading ? "Đang tải dữ liệu…" : `${records.length} / ${state.records.length} học viên`;
+    tbody.replaceChildren(...records.map((record) => buildRow(record, template)));
   }
+
+  root.querySelector("[data-query]").addEventListener("input", debounce((event) => {
+    state.query = event.target.value;
+    render();
+  }));
+
+  root.querySelector("[data-category]").addEventListener("change", (event) => {
+    state.category = event.target.value;
+    render();
+  });
+
+  root.querySelector("[data-status]").addEventListener("change", (event) => {
+    state.status = event.target.value;
+    render();
+  });
+
+  root.querySelector("[data-sort]").addEventListener("change", (event) => {
+    state.sort = event.target.value;
+    render();
+  });
 
   async function start() {
     render();
