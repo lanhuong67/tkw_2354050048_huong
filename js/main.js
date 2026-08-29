@@ -5,6 +5,7 @@ import { initPricing } from "./pricing.js";
 import { initReveal } from "./reveal.js";
 import { initSlider } from "./slider.js";
 import { initCopyCode } from "./copy.js";
+import { initRecords } from "./records.js";
 
 initNav();
 initHeaderOnScroll();
@@ -15,3 +16,4 @@ initPricing();
 initReveal();
 initSlider();
 initCopyCode();
+initRecords();
