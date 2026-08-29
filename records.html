@@ -76,6 +76,46 @@
       </div>
     </section>
 
+    <section class="mb-8 rounded-card border border-line p-5" aria-labelledby="add-record-title">
+      <h2 id="add-record-title" class="mb-4 font-display text-xl font-bold">Thêm học viên</h2>
+      <form data-add-form class="grid items-end gap-4 sm:grid-cols-2 lg:grid-cols-6">
+        <div class="lg:col-span-2">
+          <label class="field-label" for="new-trader">Họ và tên</label>
+          <input id="new-trader" name="trader" class="field-input" required minlength="2">
+        </div>
+        <div>
+          <label class="field-label" for="new-category">Khóa học</label>
+          <select id="new-category" name="category" class="field-input" required>
+            <option value="Giao tiếp">Giao tiếp</option><option value="IELTS">IELTS</option>
+            <option value="TOEIC">TOEIC</option><option value="Phát âm">Phát âm</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" for="new-status">Trạng thái</label>
+          <select id="new-status" name="status" class="field-input" required>
+            <option value="moi-dang-ky">Mới đăng ký</option>
+            <option value="dang-hoc">Đang học</option>
+            <option value="da-hoan-thanh">Đã hoàn thành</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" for="new-weight">Số bài</label>
+          <input id="new-weight" name="weight" class="field-input" type="number" min="0" max="999" value="0" required>
+        </div>
+        <div>
+          <label class="field-label" for="new-amount">Học phí (đ)</label>
+          <input id="new-amount" name="amount" class="field-input" type="number" min="0" step="1000" value="599000" required>
+        </div>
+        <button class="btn btn-primary sm:col-span-2 lg:col-span-1" type="submit">Thêm học viên</button>
+      </form>
+      <p data-toast class="mt-3 min-h-6 text-sm font-medium text-brand-600" role="status" aria-live="polite"></p>
+    </section>
+
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+      <span aria-hidden="true"></span>
+      <button data-restore class="btn btn-secondary" type="button">Khôi phục dữ liệu mẫu</button>
+    </div>
+
     <section data-state="loading" aria-label="Đang tải dữ liệu" aria-live="polite">
       <span class="sr-only">Đang tải dữ liệu…</span>
       <div class="space-y-3" aria-hidden="true">
@@ -108,6 +148,7 @@
             <th class="p-4" scope="col">Tiến độ</th>
             <th class="p-4" scope="col">Học phí</th>
             <th class="p-4" scope="col">Ngày đăng ký</th>
+            <th class="p-4" scope="col">Thao tác</th>
           </tr>
         </thead>
         <tbody data-records-body class="divide-y divide-line"></tbody>
@@ -124,6 +165,7 @@
       <td data-cell="weight" class="p-4"></td>
       <td data-cell="amount" class="whitespace-nowrap p-4"></td>
       <td data-cell="date" class="whitespace-nowrap p-4"></td>
+      <td class="p-4"><button data-remove class="rounded-lg px-3 py-2 text-sm font-semibold text-action-500 hover:bg-action-50" type="button">Xóa</button></td>
     </tr>
   </template>
 

@@ -1,3 +1,5 @@
+const STORAGE_KEY = "skillup-records-v1";
+
 const state = {
   records: [],
   query: "",
@@ -60,6 +62,10 @@ async function loadRecords() {
   return response.json();
 }
 
+function saveRecords() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state.records));
+}
+
 function buildRow(record, template) {
   const row = template.content.firstElementChild.cloneNode(true);
   row.querySelector("[data-cell='id']").textContent = record.id;
@@ -69,6 +75,9 @@ function buildRow(record, template) {
   row.querySelector("[data-cell='weight']").textContent = `${record.weight} bài`;
   row.querySelector("[data-cell='amount']").textContent = moneyFormatter.format(record.amount);
   row.querySelector("[data-cell='date']").textContent = dateFormatter.format(new Date(`${record.date}T00:00:00`));
+  const removeButton = row.querySelector("[data-remove]");
+  removeButton.dataset.remove = record.id;
+  removeButton.setAttribute("aria-label", `Xóa học viên ${record.trader}`);
   return row;
 }
 
@@ -84,6 +93,15 @@ export function initRecords() {
   const table = root.querySelector("[data-state='table']");
   const count = root.querySelector("[data-record-count]");
   const errorMessage = root.querySelector("[data-error-message]");
+  const addForm = root.querySelector("[data-add-form]");
+  const toast = root.querySelector("[data-toast]");
+
+  function announce(message) {
+    toast.textContent = message;
+    window.setTimeout(() => {
+      if (toast.textContent === message) toast.textContent = "";
+    }, 3500);
+  }
 
   function render() {
     const records = state.loading || state.error ? [] : visibleRecords();
@@ -116,10 +134,57 @@ export function initRecords() {
     render();
   });
 
-  async function start() {
+  tbody.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-remove]");
+    if (!button) return;
+    state.records = state.records.filter((record) => record.id !== button.dataset.remove);
+    saveRecords();
+    render();
+    announce("Đã xóa bản ghi.");
+  });
+
+  addForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!addForm.reportValidity()) return;
+    const formData = new FormData(addForm);
+    const newRecord = {
+      id: `LH-${Date.now().toString().slice(-9)}`,
+      trader: formData.get("trader").trim(),
+      category: formData.get("category"),
+      status: formData.get("status"),
+      weight: Number(formData.get("weight")),
+      amount: Number(formData.get("amount")),
+      date: new Date().toISOString().slice(0, 10),
+    };
+    state.records = [newRecord, ...state.records];
+    saveRecords();
+    addForm.reset();
+    render();
+    announce("Đã thêm học viên mới.");
+  });
+
+  root.querySelector("[data-restore]").addEventListener("click", async () => {
+    state.loading = true;
+    state.error = null;
     render();
     try {
       state.records = await loadRecords();
+      saveRecords();
+      announce("Đã khôi phục dữ liệu mẫu.");
+    } catch (err) {
+      state.error = `Không tải được dữ liệu: ${err.message}`;
+    } finally {
+      state.loading = false;
+      render();
+    }
+  });
+
+  async function start() {
+    render();
+    try {
+      const savedRecords = localStorage.getItem(STORAGE_KEY);
+      state.records = savedRecords ? JSON.parse(savedRecords) : await loadRecords();
+      if (!savedRecords) saveRecords();
     } catch (err) {
       state.error = `Không tải được dữ liệu: ${err.message}`;
     } finally {
